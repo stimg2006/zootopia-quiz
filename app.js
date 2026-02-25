@@ -253,6 +253,8 @@ const quizData = [
     }
 ];
 
+const allChoicesPool = [...new Set(quizData.flatMap(q => q.choices))];
+
 let currentQuestion = 0;
 let score = 0;
 let wrongScore = 0;
@@ -356,11 +358,21 @@ function showQuestion() {
         imageContainer.classList.add("hidden");
     }
 
-    // Create an array of choice objects and shuffle them
-    currentChoices = q.choices.map((choice, index) => ({
-        text: choice,
-        isCorrect: index === q.correct
-    }));
+    // Dynamic distractor generation
+    const correctAnswerText = q.choices[q.correct];
+
+    // Pick 3 random distractors from the pool (excluding the correct answer)
+    let potentialDistractors = allChoicesPool.filter(choice => choice !== correctAnswerText);
+    shuffle(potentialDistractors);
+    let selectedDistractors = potentialDistractors.slice(0, 3);
+
+    // Combine into choice objects
+    currentChoices = [
+        { text: correctAnswerText, isCorrect: true },
+        ...selectedDistractors.map(d => ({ text: d, isCorrect: false }))
+    ];
+
+    // Shuffle the final 4 choices for placement randomization
     shuffle(currentChoices);
 
     // Update buttons with shuffled choices
