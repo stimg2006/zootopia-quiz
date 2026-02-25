@@ -1,19 +1,19 @@
 const quizData = [
     {
-        question: "この キャラクターの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ジュディ・ホップス", "ニック・ワイルド", "フィニック", "ボゴ<ruby>署長<rt>しょちょう</rt></ruby>", "ベルウェザー", "クロウハウザー"],
+        question: "<ruby>この<rt></rt></ruby> <ruby>キャラクターの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["ジュディ・ホップス", "ニック・ワイルド", "フィニック", "<ruby>ボゴ<rt></rt></ruby><ruby>署長<rt>しょちょう</rt></ruby>", "ベルウェザー", "クロウハウザー"],
         correct: 0,
         image: ["pics/ホップス.exif", "pics/ホップス２.exif"]
     },
     {
-        question: "<ruby>事件<rt>じけん</rt></ruby>を <ruby>解決<rt>かいけつ</rt></ruby>する、キツネの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "<ruby>事件<rt>じけん</rt></ruby><ruby>を<rt></rt></ruby> <ruby>解決<rt>かいけつ</rt></ruby><ruby>する、キツネの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
         choices: ["ニック・ワイルド", "フィニック", "クロウハウザー", "フラッシュ", "ギデオン・グレー", "デューク"],
         correct: 0,
         image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
-        question: "ズートピア<ruby>警察<rt>けいさつ</rt></ruby>の、こわい <ruby>署長<rt>しょちょう</rt></ruby>さんは？",
-        choices: ["ボゴ", "スチュー", "ニック", "フラッシュ", "ライオンハート", "ヤックス"],
+        question: "<ruby>ズートピア<rt></rt></ruby><ruby>警察<rt>けいさつ</rt></ruby><ruby>の、こわい<rt></rt></ruby> <ruby>署長<rt>しょちょう</rt></ruby><ruby>さんは？<rt></rt></ruby>",
+        choices: ["<ruby>ボゴ<rt></rt></ruby>", "<ruby>スチュー<rt></rt></ruby>", "<ruby>ニック<rt></rt></ruby>", "<ruby>フラッシュ<rt></rt></ruby>", "<ruby>ライオンハート<rt></rt></ruby>", "<ruby>ヤックス<rt></rt></ruby>"],
         correct: 0,
         image: ["pics/ボゴ.exif", "pics/ボゴ２.exif"]
     },
@@ -25,7 +25,7 @@ const quizData = [
     },
     {
         question: "ズートピアの <ruby>市長<rt>しちょう</rt></ruby>さん。ライオンの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["レオドア・ライオンハート", "ボゴ<ruby>署長<rt>しょちょう</rt></ruby>", "スチュー", "ヤックス", "デューク", "フィニック"],
+        choices: ["レオドア・ライオンハート", "<ruby>ボゴ<rt></rt></ruby><ruby>署長<rt>しょちょう</rt></ruby>", "スチュー", "ヤックス", "デューク", "フィニック"],
         correct: 0,
         image: ["pics/ライオンハート市長.exif", "pics/ライオンハート市長２.exif"]
     },
@@ -138,18 +138,18 @@ const quizData = [
         image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
-        question: "ニックが ジュディを よぶときに つかう、やさいの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ニンジン", "タマネギ", "ピーマン", "ジャガイモ", "ナス", "キュウリ"],
+        question: "<ruby>ニックが<rt></rt></ruby> <ruby>ジュディを<rt></rt></ruby> <ruby>よぶときに<rt></rt></ruby> <ruby>つかう、やさいの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>ニンジン<rt></rt></ruby>", "<ruby>タマネギ<rt></rt></ruby>", "<ruby>ピーマン<rt></rt></ruby>", "<ruby>ジャガイモ<rt></rt></ruby>", "<ruby>ナス<rt></rt></ruby>", "<ruby>キュウリ<rt></rt></ruby>"],
         correct: 0
     },
     {
-        question: "ベルウェザー <ruby>副市長<rt>ふくしちょう</rt></ruby>は、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
-        choices: ["ヒツジ", "ヤギ", "ウシ", "ウマ", "シカ", "ラクダ"],
+        question: "<ruby>ベルウェザー<rt></rt></ruby> <ruby>副市長<rt>ふくしちょう</rt></ruby><ruby>は、なんの<rt></rt></ruby> <ruby>動物<rt>どうぶつ</rt></ruby><ruby>？<rt></rt></ruby>",
+        choices: ["<ruby>ヒツジ<rt></rt></ruby>", "<ruby>ヤギ<rt></rt></ruby>", "<ruby>ウシ<rt></rt></ruby>", "<ruby>ウマ<rt></rt></ruby>", "<ruby>シカ<rt></rt></ruby>", "<ruby>ラクダ<rt></rt></ruby>"],
         correct: 0,
         image: ["pics/ベルウェザー.exif", "pics/ベルウェザー２.exif"]
     },
     {
-        question: "<ruby>動物<rt>どうぶつ</rt></ruby>たちを おこらせてしまう、こわい おはなの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "<ruby>動物<rt>どうぶつ</rt></ruby><ruby>たちを<rt></rt></ruby> <ruby>おこらせてしまう、こわい<rt></rt></ruby> <ruby>おはなの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
         choices: ["ヨルノトオボエ", "あかりの はな", "ねむりの くさ", "どくの み", "ひかりの つぼみ", "まほうの えだ"],
         correct: 0
     },
@@ -160,14 +160,16 @@ const quizData = [
         image: ["pics/クロウハウザー.exif", "pics/クロウハウザー2.exif"]
     },
     {
-        question: "めんきょせんたーで <ruby>働<rt>はたら</rt></ruby>く フラッシュは、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
-        choices: ["ナマケモノ", "カメ", "ゾウ", "カバ", "サイ", "ワニ"],
-        correct: 0
+        question: "<ruby>めんきょせんたーで<rt></rt></ruby> <ruby>働<rt>はたら</rt></ruby><ruby>く<rt></rt></ruby> <ruby>フラッシュは、なんの<rt></rt></ruby> <ruby>動物<rt>どうぶつ</rt></ruby><ruby>？<rt></rt></ruby>",
+        choices: ["<ruby>ナマケモノ<rt></rt></ruby>", "<ruby>カメ<rt></rt></ruby>", "<ruby>ゾウ<rt></rt></ruby>", "<ruby>カバ<rt></rt></ruby>", "<ruby>サイ<rt></rt></ruby>", "<ruby>ワニ<rt></rt></ruby>"],
+        correct: 0,
+        image: "pics/フラッシュ.exif"
     },
     {
-        question: "ミスター・ビッグは、どこの まちの ボス？",
-        choices: ["ツンドラタウン", "サハラ・スクエア", "レインフォレスト", "ダウンタウン", "サバンナ・セントラル", "バニーバロウ"],
-        correct: 0
+        question: "<ruby>ミスター・ビッグは、どこの<rt></rt></ruby> <ruby>まちの<rt></rt></ruby> <ruby>ボス？<rt></rt></ruby>",
+        choices: ["<ruby>ツンドラタウン<rt></rt></ruby>", "<ruby>サハラ・スクエア<rt></rt></ruby>", "<ruby>レインフォレスト<rt></rt></ruby>", "<ruby>ダウンタウン<rt></rt></ruby>", "<ruby>サバンナ・セントラル<rt></rt></ruby>", "<ruby>バニーバロウ<rt></rt></ruby>"],
+        correct: 0,
+        image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
         question: "とっても ちいさな ミスター・ビッグは、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
@@ -176,13 +178,14 @@ const quizData = [
         image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
-        question: "ズートピアの <ruby>主題歌<rt>しゅだいか</rt></ruby>（うた）の <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["トライ・エヴリシング", "ハッピー・ソング", "ズートピア・マーチ", "あしたへ ジャンプ", "みんなで あそぼう", "きらきら スマイル"],
-        correct: 0
+        question: "<ruby>ズートピアの<rt></rt></ruby> <ruby>主題歌<rt>しゅだいか</rt></ruby><ruby>（うた）の<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>トライ・エヴリシング<rt></rt></ruby>", "<ruby>ハッピー・ソング<rt></rt></ruby>", "<ruby>ズートピア・マーチ<rt></rt></ruby>", "<ruby>あしたへ<rt></rt></ruby> <ruby>ジャンプ<rt></rt></ruby>", "<ruby>みんなで<rt></rt></ruby> <ruby>あそぼう<rt></rt></ruby>", "<ruby>きらきら<rt></rt></ruby> <ruby>スマイル<rt></rt></ruby>"],
+        correct: 0,
+        image: ["pics/ガゼル.exif", "pics/ガゼル２.exif"]
     },
     {
-        question: "ジュディが おとうさんたちから よばれている あだなは？",
-        choices: ["ジュージュア", "ジュディ", "ピョンピョン", "ウサチャン", "ジューチャン", "ピョンコ"],
+        question: "<ruby>ジュディが<rt></rt></ruby> <ruby>おとうさんたちから<rt></rt></ruby> <ruby>よばれている<rt></rt></ruby> <ruby>あだなは？<rt></rt></ruby>",
+        choices: ["<ruby>ジュージュア<rt></rt></ruby>", "<ruby>ジュディ<rt></rt></ruby>", "<ruby>ピョンピョン<rt></rt></ruby>", "<ruby>ウサチャン<rt></rt></ruby>", "<ruby>ジューチャン<rt></rt></ruby>", "<ruby>ピョンコ<rt></rt></ruby>"],
         correct: 0
     },
     {
@@ -191,8 +194,8 @@ const quizData = [
         correct: 0
     },
     {
-        question: "2025ねんに <ruby>公開<rt>こうかい</rt></ruby>される「ズートピア２」。なぞの へびの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ゲイリー", "パウバート", "ニブルズ", "ヘイスース", "ゼブロ", "ニック"],
+        question: "<ruby>2025ねんに<rt></rt></ruby> <ruby>公開<rt>こうかい</rt></ruby><ruby>される「ズートピア２」。なぞの<rt></rt></ruby> <ruby>へびの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>ゲイリー<rt></rt></ruby>", "<ruby>パウバート<rt></rt></ruby>", "<ruby>ニブルズ<rt></rt></ruby>", "<ruby>ヘイスース<rt></rt></ruby>", "<ruby>ゼブロ<rt></rt></ruby>", "<ruby>ニック<rt></rt></ruby>"],
         correct: 0
     },
     {
@@ -206,18 +209,19 @@ const quizData = [
         correct: 0
     },
     {
-        question: "ズートピア２で、ズートピアの なぞについて はなしている ビーバーの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ニブルズ", "ボニー", "スチュー", "フラッシュ", "ヤックス", "ガゼル"],
+        question: "<ruby>ズートピア２で、ズートピアの<rt></rt></ruby> <ruby>なぞについて<rt></rt></ruby> <ruby>はなしている<rt></rt></ruby> <ruby>ビーバーの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>ニブルズ<rt></rt></ruby>", "<ruby>ボニー<rt></rt></ruby>", "<ruby>スチュー<rt></rt></ruby>", "<ruby>フラッシュ<rt></rt></ruby>", "<ruby>ヤックス<rt></rt></ruby>", "<ruby>ガゼル<rt></rt></ruby>"],
+        correct: 0,
+        image: "pics/ニブルズ.jpg"
+    },
+    {
+        question: "<ruby>ジュディが<rt></rt></ruby> <ruby>警察署<rt>けいさつしょ</rt></ruby><ruby>で<rt></rt></ruby> <ruby>最初<rt>さいしょ</rt></ruby><ruby>に<rt></rt></ruby> <ruby>まかされた<rt></rt></ruby> <ruby>おしごとは？<rt></rt></ruby>",
+        choices: ["<ruby>駐車<rt>ちゅうしゃ</rt></ruby> <ruby>違反<rt>いはん</rt></ruby><ruby>の<rt></rt></ruby> <ruby>とりしまり<rt></rt></ruby>", "<ruby>ドロボウつかまえ<rt></rt></ruby>", "<ruby>迷子<rt>まいご</rt></ruby><ruby>さがし<rt></rt></ruby>", "<ruby>交通整理<rt>こうつうせいり</rt></ruby>", "<ruby>おそうじ<rt></rt></ruby>", "<ruby>パトロール<rt></rt></ruby>"],
         correct: 0
     },
     {
-        question: "ジュディが <ruby>警察署<rt>けいさつしょ</rt></ruby>で <ruby>最初<rt>さいしょ</rt></ruby>に まかされた おしごとは？",
-        choices: ["<ruby>駐車<rt>ちゅうしゃ</rt></ruby> <ruby>違反<rt>いはん</rt></ruby>の とりしまり", "ドロボウつかまえ", "<ruby>迷子<rt>まいご</rt></ruby>さがし", "<ruby>交通整理<rt>こうつうせいり</rt></ruby>", "おそうじ", "パトロール"],
-        correct: 0
-    },
-    {
-        question: "ニックが <ruby>大好き<rt>だいすき</rt></ruby>な、あかい <ruby>肉球<rt>にくきゅう</rt></ruby>の かたちをした アイスの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス", "ニンジン・アイス", "ペロペロキャンディー"],
+        question: "<ruby>ニックが<rt></rt></ruby> <ruby>大好<rt>だいす</rt></ruby><ruby>きな、あかい<rt></rt></ruby> <ruby>肉球<rt>にくきゅう</rt></ruby><ruby>の<rt></rt></ruby> <ruby>かたちをした<rt></rt></ruby> <ruby>アイスの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>パウシクル（Pawpsicle）<rt></rt></ruby>", "<ruby>ドーナツ・アイス<rt></rt></ruby>", "<ruby>キツネ・アイス<rt></rt></ruby>", "<ruby>ズートピア・アイス<rt></rt></ruby>", "<ruby>ニンジン・アイス<rt></rt></ruby>", "<ruby>ペロペロキャンディー<rt></rt></ruby>"],
         correct: 0
     },
     {
@@ -241,8 +245,8 @@ const quizData = [
         correct: 0
     },
     {
-        question: "ズートピア２で、ニックの <ruby>警察官<rt>けいさつかん</rt></ruby>としての ランク（かいきゅう）は？",
-        choices: ["ジュディと おなじ あいぼう", "ジュディの <ruby>上司<rt>じょうし</rt></ruby>", "まだ <ruby>見習<rt>みなら</rt></ruby>い", "<ruby>署長<rt>しょちょう</rt></ruby>", "えらーい ひと", "てつだい"],
+        question: "<ruby>ズートピア２で、ニックの<rt></rt></ruby> <ruby>警察官<rt>けいさつかん</rt></ruby><ruby>としての<rt></rt></ruby> <ruby>ランク（かいきゅう）は？<rt></rt></ruby>",
+        choices: ["<ruby>ジュディと<rt></rt></ruby> <ruby>おなじ<rt></rt></ruby> <ruby>あいぼう<rt></rt></ruby>", "<ruby>ジュディの<rt></rt></ruby> <ruby>上司<rt>じょうし</rt></ruby>", "<ruby>まだ<rt></rt></ruby> <ruby>見習<rt>みなら</rt></ruby><ruby>い<rt></rt></ruby>", "<ruby>署長<rt>しょちょう</rt></ruby>", "<ruby>えらーい<rt></rt></ruby> <ruby>ひと<rt></rt></ruby>", "<ruby>てつだい<rt></rt></ruby>"],
         correct: 0
     },
     {
@@ -252,7 +256,7 @@ const quizData = [
     },
     {
         question: "ズートピア２で ジュディのファンだと言っている、ビーバーの ニブルズ。<ruby>何<rt>なに</rt></ruby>を してる <ruby>人<rt>ひと</rt></ruby>？",
-        choices: ["<ruby>配信者<rt>はいしんしゃ</rt></ruby>", "<ruby>洋服屋<rt>ようふくや</rt></ruby>さん", "<ruby>町<rt>まち</rt></ruby>の<ruby>支配人<rt>しはいにん</rt></ruby>", "<ruby>警察官<rt>けいさつかん</rt></ruby>", "<ruby>医者<rt>いしゃ</rt></ruby>", "<ruby>先生<rt>せんせい</rt></ruby>"],
+        choices: ["<ruby>配信者<rt>はいしんしゃ</rt></ruby>", "<ruby>洋服屋<rt>ようふくや</rt></ruby><ruby>さん<rt></rt></ruby>", "<ruby>町<rt>まち</rt></ruby><ruby>の<rt></rt></ruby><ruby>支配人<rt>しはいにん</rt></ruby>", "<ruby>警察官<rt>けいさつかん</rt></ruby>", "<ruby>医者<rt>いしゃ</rt></ruby>", "<ruby>先生<rt>せんせい</rt></ruby>"],
         correct: 0,
         image: "pics/ニブルズ.jpg"
     },
@@ -263,14 +267,14 @@ const quizData = [
         image: "pics/ヘイスース.jpg"
     },
     {
-        question: "ズートピア２に でてくる、ゼブロ・ゼブラクストンの <ruby>口癖<rt>くちぐせ</rt></ruby>は <ruby>何<rt>なに</rt></ruby>？",
+        question: "ズートピア２に でてくる、ゼブロ・ゼブラクストンの <ruby>口癖<rt>くちぐせ</rt></ruby><ruby>は<rt></rt></ruby> <ruby>何<rt>なに</rt></ruby><ruby>？<rt></rt></ruby>",
         choices: ["シマってこう！", "ウマをあわせていこう！", "<ruby>大丈<rt>だいじょう</rt></ruby><ruby>夫<rt>ぶ</rt></ruby>！", "よろしくね！", "おはよー！", "がんばろう！"],
         correct: 0,
         image: "pics/ゼブロ・ゼブラクストン.jpg"
     },
     {
-        question: "ひそかに「よるの とおぼえ」の <ruby>弾丸<rt>だんがん</rt></ruby>を <ruby>作<rt>つく</rt></ruby>っていた、ヒツジの <ruby>科学者<rt>かがくしゃ</rt></ruby>は？",
-        choices: ["ダグ", "ベルウェザー", "デューク", "フィニック", "ニック", "ボゴ"],
+        question: "<ruby>ひそかに「よるの<rt></rt></ruby> <ruby>とおぼえ」の<rt></rt></ruby> <ruby>弾丸<rt>だんがん</rt></ruby><ruby>を<rt></rt></ruby> <ruby>作<rt>つく</rt></ruby><ruby>っていた、ヒツジの<rt></rt></ruby> <ruby>科学者<rt>かがくしゃ</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>ダグ<rt></rt></ruby>", "<ruby>ベルウェザー<rt></rt></ruby>", "<ruby>デューク<rt></rt></ruby>", "<ruby>フィニック<rt></rt></ruby>", "<ruby>ニック<rt></rt></ruby>", "<ruby>ボゴ<rt></rt></ruby>"],
         correct: 0,
         image: ["pics/ダグ.exif", "pics/ダグ２.exif"]
     },
@@ -287,8 +291,8 @@ const quizData = [
         image: "pics/ジェリー・ジャンブー・ジュニア.exif"
     },
     {
-        question: "ズートピア<ruby>警察署<rt>けいさつしょ</rt></ruby>の、ガッシリした サイの <ruby>警察官<rt>けいさつかん</rt></ruby>は？",
-        choices: ["マックホーン", "ボゴ", "ニック", "クロウハウザー", "ライオンハート", "マンチャス"],
+        question: "<ruby>ズートピア<rt></rt></ruby><ruby>警察署<rt>けいさつしょ</rt></ruby><ruby>の、ガッシリした<rt></rt></ruby> <ruby>サイの<rt></rt></ruby> <ruby>警察官<rt>けいさつかん</rt></ruby><ruby>は？<rt></rt></ruby>",
+        choices: ["<ruby>マックホーン<rt></rt></ruby>", "<ruby>ボゴ<rt></rt></ruby>", "<ruby>ニック<rt></rt></ruby>", "<ruby>クロウハウザー<rt></rt></ruby>", "<ruby>ライオンハート<rt></rt></ruby>", "<ruby>マンチャス<rt></rt></ruby>"],
         correct: 0,
         image: "pics/マックホーン.exif"
     }
