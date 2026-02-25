@@ -150,7 +150,7 @@ const quizData = [
     },
     {
         question: "<ruby>動物<rt>どうぶつ</rt></ruby><ruby>たちを<rt></rt></ruby> <ruby>おこらせてしまう、こわい<rt></rt></ruby> <ruby>おはなの<rt></rt></ruby> <ruby>名前<rt>なまえ</rt></ruby><ruby>は？<rt></rt></ruby>",
-        choices: ["ヨルノトオボエ", "あかりの はな", "ねむりの くさ", "どくの み", "ひかりの つぼみ", "まほうの えだ"],
+        choices: ["<ruby>よるのとおぼえ<rt></rt></ruby>", "<ruby>あかりの<rt></rt></ruby> <ruby>はな<rt></rt></ruby>", "<ruby>ねむりの<rt></rt></ruby> <ruby>くさ<rt></rt></ruby>", "<ruby>どくの<rt></rt></ruby> <ruby>み<rt></rt></ruby>", "<ruby>ひかりの<rt></rt></ruby> <ruby>つぼみ<rt></rt></ruby>", "<ruby>まほうの<rt></rt></ruby> <ruby>えだ<rt></rt></ruby>"],
         correct: 0
     },
     {
