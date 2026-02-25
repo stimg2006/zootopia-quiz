@@ -164,7 +164,7 @@ const quizData = [
         question: "めんきょせんたーで 働（はたら）く フラッシュは、なんの 動物（どうぶつ）？",
         choices: ["ナマケモノ", "カメ", "ゾウ", "カバ", "サイ", "ワニ"],
         correct: 0,
-        image: "pics/フラッシュ.exif"
+        image: ["pics/フラッシュ.exif", "pics/フラッシュ２.exif", "pics/フラッシュ３.exif"]
     },
     {
         question: "ミスター・ビッグは、どこの まちの ボス？",
