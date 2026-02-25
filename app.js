@@ -267,6 +267,30 @@ const quizData = [
         choices: ["シマってこう！", "ウマをあわせていこう！", "<ruby>大丈<rt>だいじょう</rt></ruby><ruby>夫<rt>ぶ</rt></ruby>！", "よろしくね！", "おはよー！", "がんばろう！"],
         correct: 0,
         image: "pics/ゼブロ・ゼブラクストン.jpg"
+    },
+    {
+        question: "ひそかに「よるの とおぼえ」の <ruby>弾丸<rt>だんがん</rt></ruby>を <ruby>作<rt>つく</rt></ruby>っていた、ヒツジの <ruby>科学者<rt>かがくしゃ</rt></ruby>は？",
+        choices: ["ダグ", "ベルウェザー", "デューク", "フィニック", "ニック", "ボゴ"],
+        correct: 0,
+        image: ["pics/ダグ.exif", "pics/ダグ２.exif"]
+    },
+    {
+        question: "ナチュリストクラブにいる、ゾウの おんなのこの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        choices: ["ナンギ", "フルー・フルー", "ガゼル", "プリシラ", "ボニー", "ナギ"],
+        correct: 0,
+        image: ["pics/ナンギ.exif", "pics/ナンギ２.exif"]
+    },
+    {
+        question: "ゾウ<ruby>専用<rt>せんよう</rt></ruby>の アイスクリームショップの <ruby>店主<rt>てんしゅ</rt></ruby>さんは？",
+        choices: ["ジェリー・ジャンブー・ジュニア", "ニック", "ボゴ", "フラッシュ", "ギデオン", "エミット"],
+        correct: 0,
+        image: "pics/ジェリー・ジャンブー・ジュニア.exif"
+    },
+    {
+        question: "ズートピア<ruby>警察署<rt>けいさつしょ</rt></ruby>の、ガッシリした サイの <ruby>警察官<rt>けいさつかん</rt></ruby>は？",
+        choices: ["マックホーン", "ボゴ", "ニック", "クロウハウザー", "ライオンハート", "マンチャス"],
+        correct: 0,
+        image: "pics/マックホーン.exif"
     }
 ];
 
