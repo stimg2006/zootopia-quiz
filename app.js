@@ -422,8 +422,8 @@ function showQuestion() {
 }
 
 function updateScore() {
-    scoreDisplay.innerHTML = `<ruby>正解<rt>せいかい</rt></ruby>: ${score}`;
-    wrongScoreDisplay.innerHTML = `<ruby>間<rt>ま</rt></ruby>ちがい: ${wrongScore}`;
+    scoreDisplay.innerText = `せいかい: ${score}`;
+    wrongScoreDisplay.innerText = `まちがい: ${wrongScore}`;
 }
 
 function checkAnswer(index) {
