@@ -42,7 +42,7 @@ const quizData = [
         image: "pics/スチュー・ホップス.png"
     },
     {
-        question: "ジュディ의 おとうさんの なまえは？",
+        question: "ジュディの おとうさんの なまえは？",
         choices: ["スチュー", "ニック", "ボゴ", "フラッシュ"],
         correct: 0,
         image: "pics/ボニー・ホップス.png"
@@ -57,26 +57,12 @@ const quizData = [
         choices: ["エミット", "ニック", "スチュー", "フィニック"],
         correct: 0
     },
-    {
-        question: "じけんの ことを しっていた、ジャガーの なまえは？",
-        choices: ["マンチャス", "ボゴ", "ヤックス", "デューク"],
-        correct: 0
-    },
-    {
-        question: "ベルウェザーと いっしょにいた、ひつじの コンビは？",
-        choices: ["ウールター＆ジェシー", "ニック＆ジュディ", "フラッシュ＆プリシラ", "ボニー＆スチュー"],
-        correct: 0
-    },
+
     {
         question: "ニックと いっしょに アイスを うっていた、ちいさな フェネックは？",
         choices: ["フィニック", "フラッシュ", "ミスター・ビッグ", "デューク"],
         correct: 0,
         image: "pics/フィニック.exif"
-    },
-    {
-        question: "のんびりやさんの なまけもの。なまえは？",
-        choices: ["フラッシュ", "ニック", "ボゴ", "ガゼル"],
-        correct: 0
     },
     {
         question: "フラッシュと いっしょに はたらいている なまけものの おんなのこは？",
@@ -86,7 +72,7 @@ const quizData = [
     },
     {
         question: "とっても こわい、ネズミの ボス。なまえは？",
-        choices: ["ミスター・ビッグ", "ミセス-オッタートン", "フルー・フルー", "ガゼル"],
+        choices: ["ミスター・ビッグ", "ミセス・オッタートン", "フルー・フルー", "ガゼル"],
         correct: 0,
         image: "pics/Mr.ビッグ.exif"
     },
@@ -96,16 +82,7 @@ const quizData = [
         correct: 0,
         image: "pics/フルー・フルー.exif"
     },
-    {
-        question: "ニュースを つたえる、ヘラジカの キャスターは？",
-        choices: ["ピーター・ムースブリッジ", "レオドア・ライオンハート", "ボゴ", "ヤックス"],
-        correct: 0
-    },
-    {
-        question: "ニュースを つたえる、ヒョウの キャスターは？",
-        choices: ["ファビーヌ・グッドウィン", "ガゼル", "プリシラ", "ベルウェザー"],
-        correct: 0
-    },
+
     {
         question: "ナチュリストクラブにいる、ヤクの なまえは？",
         choices: ["ヤックス", "マンチャス", "ボゴ", "ニック"],
@@ -118,11 +95,7 @@ const quizData = [
         correct: 0,
         image: "pics/デューク・ウィーゼルトン.exif"
     },
-    {
-        question: "とっても ものしりな、ゾウさんの なまえは？",
-        choices: ["ナンギ", "ボゴ", "ライオンハート", "ガゼル"],
-        correct: 0
-    },
+
     {
         question: "ズートピアの だいにんき かしゅ。なまえは？",
         choices: ["ガゼル", "ベルウェザー", "フラッシュ", "ジュディ"],
@@ -149,8 +122,9 @@ const quizData = [
 
 let currentQuestion = 0;
 let score = 0;
+let wrongScore = 0;
 let shuffledQuiz = [];
-let currentChoices = []; // To store shuffled choices for the current question
+let currentChoices = [];
 
 const questionText = document.getElementById("question-text");
 const questionImage = document.getElementById("question-image");
@@ -162,6 +136,7 @@ const choicesBtns = [
     document.getElementById("choice4")
 ];
 const scoreDisplay = document.getElementById("score");
+const wrongScoreDisplay = document.getElementById("wrong-score");
 const remainingDisplay = document.getElementById("remaining");
 const quizScreen = document.getElementById("quiz-screen");
 const resultScreen = document.getElementById("result-screen");
@@ -180,6 +155,7 @@ function shuffle(array) {
 function startGame() {
     currentQuestion = 0;
     score = 0;
+    wrongScore = 0;
     // Shuffle all questions and take the first 10
     shuffledQuiz = shuffle([...quizData]).slice(0, 10);
 
@@ -218,6 +194,7 @@ function showQuestion() {
 
 function updateScore() {
     scoreDisplay.innerText = score;
+    wrongScoreDisplay.innerText = wrongScore;
 }
 
 function checkAnswer(index) {
@@ -228,6 +205,8 @@ function checkAnswer(index) {
         updateScore();
         choicesBtns[index].classList.add("correct-highlight");
     } else {
+        wrongScore++;
+        updateScore();
         choicesBtns[index].classList.add("wrong-highlight");
         // Highlight the correct one
         const correctIndex = currentChoices.findIndex(c => c.isCorrect);
@@ -243,6 +222,8 @@ function checkAnswer(index) {
         if (currentQuestion < shuffledQuiz.length) {
             showQuestion();
         } else {
+            // Fix: set remaining to 0 before showing result
+            remainingDisplay.innerText = "0";
             showResult();
         }
     }, 2500);
@@ -267,9 +248,9 @@ function showResult() {
     finalScoreText.innerText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
 
     const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
-        score >= 7 ? "やったね！ズートピア 博士だ！" :
+        score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
             "また あそんでね！";
-    document.getElementById("result-message").innerText = message;
+    document.getElementById("result-message").innerHTML = message;
 }
 
 // Start the game when the page loads

@@ -52,14 +52,18 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-#score-board {
+.score-container {
     display: flex;
     justify-content: space-around;
     background: #f0f9ff;
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
+    margin-bottom: 25px;
     font-weight: bold;
-    color: #0369a1;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 #question-container {
