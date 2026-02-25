@@ -298,6 +298,8 @@ const seWrong = document.getElementById("se-wrong");
 const sePerfect = document.getElementById("se-perfect");
 const seStart = document.getElementById("se-start");
 const seTimer = document.getElementById("se-timer");
+const hanamaruContainer = document.getElementById("hanamaru-container");
+const resultMessage = document.getElementById("result-message");
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -339,7 +341,7 @@ function startGame() {
     shuffledQuiz = selectedIndices.map(i => quizData[i]);
 
     document.getElementById("start-screen").classList.add("hidden");
-    document.getElementById("hanamaru-container").classList.add("hidden");
+    hanamaruContainer.classList.add("hidden");
     document.getElementById("fireworks-container").innerHTML = "";
 
     resultScreen.classList.add("hidden");
