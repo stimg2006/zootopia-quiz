@@ -39,13 +39,13 @@ const quizData = [
         question: "ジュディの おかあさんの なまえは？",
         choices: ["ボニー", "ベルウェザー", "プリシラ", "フルー・フルー"],
         correct: 0,
-        image: "pics/スチュー・ホップス.png"
+        image: "pics/ボニー・ホップス.png"
     },
     {
         question: "ジュディの おとうさんの なまえは？",
         choices: ["スチュー", "ニック", "ボゴ", "フラッシュ"],
         correct: 0,
-        image: "pics/ボニー・ホップス.png"
+        image: "pics/スチュー・ホップス.png"
     },
     {
         question: "「だんなさんが いなくなったの」と そうだんにきた カワウソさんは？",
@@ -57,12 +57,21 @@ const quizData = [
         choices: ["エミット", "ニック", "スチュー", "フィニック"],
         correct: 0
     },
-
+    {
+        question: "じけんの ことを しっていた、ジャガーの なまえは？",
+        choices: ["マンチャス", "ボゴ", "ヤックス", "デューク"],
+        correct: 0
+    },
     {
         question: "ニックと いっしょに アイスを うっていた、ちいさな フェネックは？",
         choices: ["フィニック", "フラッシュ", "ミスター・ビッグ", "デューク"],
         correct: 0,
         image: "pics/フィニック.exif"
+    },
+    {
+        question: "のんびりやさんの なまけもの。なまえは？",
+        choices: ["フラッシュ", "ニック", "ボゴ", "ガゼル"],
+        correct: 0
     },
     {
         question: "フラッシュと いっしょに はたらいている なまけものの おんなのこは？",
@@ -82,7 +91,6 @@ const quizData = [
         correct: 0,
         image: "pics/フルー・フルー.exif"
     },
-
     {
         question: "ナチュリストクラブにいる、ヤクの なまえは？",
         choices: ["ヤックス", "マンチャス", "ボゴ", "ニック"],
@@ -95,7 +103,6 @@ const quizData = [
         correct: 0,
         image: "pics/デューク・ウィーゼルトン.exif"
     },
-
     {
         question: "ズートピアの だいにんき かしゅ。なまえは？",
         choices: ["ガゼル", "ベルウェザー", "フラッシュ", "ジュディ"],
@@ -108,8 +115,8 @@ const quizData = [
         correct: 0
     },
     {
-        question: "ニックが だいすきな、あかい アイスの なまえは？",
-        choices: ["パウパウ・アイス", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
+        question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスは？",
+        choices: ["にくきゅう アイスキャンディー", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
         correct: 0
     },
     {
@@ -156,12 +163,9 @@ function startGame() {
     currentQuestion = 0;
     score = 0;
     wrongScore = 0;
-    // Shuffle all questions and take the first 10
     shuffledQuiz = shuffle([...quizData]).slice(0, 10);
-
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
-
     updateScore();
     showQuestion();
 }
@@ -169,37 +173,31 @@ function startGame() {
 function showQuestion() {
     const q = shuffledQuiz[currentQuestion];
     questionText.innerText = q.question;
-
     if (q.image) {
         questionImage.src = q.image;
         imageContainer.classList.remove("hidden");
     } else {
         imageContainer.classList.add("hidden");
     }
-
-    // Randomize choices order
     currentChoices = q.choices.map((choice, index) => ({
         text: choice,
         isCorrect: index === q.correct
     }));
     shuffle(currentChoices);
-
     currentChoices.forEach((choiceObj, index) => {
         choicesBtns[index].innerText = choiceObj.text;
         choicesBtns[index].classList.remove("correct-highlight", "wrong-highlight");
     });
-
     remainingDisplay.innerText = shuffledQuiz.length - currentQuestion;
 }
 
 function updateScore() {
-    scoreDisplay.innerText = score;
-    wrongScoreDisplay.innerText = wrongScore;
+    if (scoreDisplay) scoreDisplay.innerText = score;
+    if (wrongScoreDisplay) wrongScoreDisplay.innerText = wrongScore;
 }
 
 function checkAnswer(index) {
     const isCorrect = currentChoices[index].isCorrect;
-
     if (isCorrect) {
         score++;
         updateScore();
@@ -208,22 +206,16 @@ function checkAnswer(index) {
         wrongScore++;
         updateScore();
         choicesBtns[index].classList.add("wrong-highlight");
-        // Highlight the correct one
         const correctIndex = currentChoices.findIndex(c => c.isCorrect);
         choicesBtns[correctIndex].classList.add("correct-highlight");
     }
-
     showFeedback(isCorrect);
-
     currentQuestion++;
-
-    // Wait longer as requested (2500ms)
     setTimeout(() => {
         if (currentQuestion < shuffledQuiz.length) {
             showQuestion();
         } else {
-            // Fix: set remaining to 0 before showing result
-            remainingDisplay.innerText = "0";
+            if (remainingDisplay) remainingDisplay.innerText = "0";
             showResult();
         }
     }, 2500);
@@ -234,7 +226,6 @@ function showFeedback(isCorrect) {
     feedbackIcon.style.color = isCorrect ? "#ef4444" : "#3b82f6";
     feedbackOverlay.classList.add("show");
     feedbackOverlay.classList.remove("hidden");
-
     setTimeout(() => {
         feedbackOverlay.classList.remove("show");
         feedbackOverlay.classList.add("hidden");
@@ -244,15 +235,11 @@ function showFeedback(isCorrect) {
 function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
-
     finalScoreText.innerText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
-
     const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
         score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
             "また あそんでね！";
     document.getElementById("result-message").innerHTML = message;
 }
 
-// Start the game when the page loads
 window.onload = startGame;
-
