@@ -131,12 +131,13 @@ header {
 
 ruby {
     ruby-align: center;
+    ruby-position: over;
 }
 
 rt {
-    font-size: 0.6em;
-    line-height: 1;
-    vertical-align: -0.1em;
+    font-size: 0.55em;
+    line-height: 1.2;
+    text-align: center;
 }
 
 .choice-btn:active {
