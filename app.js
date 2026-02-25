@@ -3,37 +3,37 @@ const quizData = [
         question: "この キャラクターの なまえは？",
         choices: ["ニック・ワイルド", "ジュディ・ホップス", "フィニック", "ボゴしょちょう"],
         correct: 1,
-        image: "pics/ホップス.exif"
+        image: ["pics/ホップス.exif", "pics/ホップス２.exif"]
     },
     {
         question: "じけんを かいけつする、キツネの なまえは？",
         choices: ["フィニック", "クロウハウザー", "ニック・ワイルド", "フラッシュ"],
         correct: 2,
-        image: "pics/ワイルド.exif"
+        image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
         question: "ズートピアけいさつの、こわい しょちょうさんは？",
         choices: ["スチュー", "ニック", "ボゴ", "フラッシュ"],
         correct: 2,
-        image: "pics/ボゴ.exif"
+        image: ["pics/ボゴ.exif", "pics/ボゴ２.exif"]
     },
     {
         question: "ドーナツが だいすきな、けいさつしょの うけつけの チーターは？",
-        choices: ["クロウハウザー", "ライオンハート", "マンチャス", "ギデオン"],
+        choices: ["クロウハウザー", "らいおんはーと", "まんちゃす", "ぎでおん"],
         correct: 0,
-        image: "pics/クロウハウザー.exif"
+        image: ["pics/クロウハウザー.exif", "pics/クロウハウザー2.exif"]
     },
     {
         question: "ズートピアの しちょうさん。ライオンの なまえは？",
         choices: ["ボゴしょちょう", "レオドア・ライオンハート", "スチュー", "ヤックス"],
         correct: 1,
-        image: "pics/ライオンハート市長.exif"
+        image: ["pics/ライオンハート市長.exif", "pics/ライオンハート市長２.exif"]
     },
     {
         question: "ひつじの ふくしちょうさんの なまえは？",
         choices: ["ベルウェザー", "ボン・ホップス", "ガゼル", "ナギ"],
         correct: 0,
-        image: "pics/ベルウェザー.exif"
+        image: ["pics/ベルウェザー.exif", "pics/ベルウェザー２.exif"]
     },
     {
         question: "ジュディの おかあさんの なまえは？",
@@ -50,40 +50,44 @@ const quizData = [
     {
         question: "「だんなさんが いなくなったの」と そうだんにきた カワウソさんは？",
         choices: ["オッタートンふじん", "ガゼル", "ジュディ", "プリシラ"],
-        correct: 0
+        correct: 0,
+        image: "pics/オッタートンふじん.exif"
     },
     {
         question: "いなくなった カワウソの おとうさんの なまえは？",
         choices: ["エミット", "ニック", "スチュー", "フィニック"],
-        correct: 0
+        correct: 0,
+        image: ["pics/エミット・オッタートン.exif", "pics/エミット・オッタートン２.jpg"]
     },
     {
         question: "じけんの ことを しっていた、ジャガーの なまえは？",
         choices: ["マンチャス", "ボゴ", "ヤックス", "デューク"],
-        correct: 0
+        correct: 0,
+        image: ["pics/マンチャス.webp", "pics/マンチャス２.jpg"]
     },
     {
         question: "ニックと いっしょに アイスを うっていた、ちいさな フェネックは？",
         choices: ["フィニック", "フラッシュ", "ミスター・ビッグ", "デューク"],
         correct: 0,
-        image: "pics/フィニック.exif"
+        image: ["pics/フィニック.exif", "pics/フィニック２.exif", "pics/フィニック３.exif"]
     },
     {
         question: "のんびりやさんの なまけもの。なまえは？",
         choices: ["フラッシュ", "ニック", "ボゴ", "ガゼル"],
-        correct: 0
+        correct: 0,
+        image: "pics/フラッシュ.exif"
     },
     {
         question: "フラッシュと いっしょに はたらいている なまけものの おんなのこは？",
         choices: ["プリシラ", "フルー・フルー", "ガゼル", "ナギ"],
         correct: 0,
-        image: "pics/プリシラ.exif"
+        image: ["pics/プリシラ.exif", "pics/プリシラ２.exif"]
     },
     {
         question: "とっても こわい、ネズミの ボス。なまえは？",
         choices: ["ミスター・ビッグ", "ミセス・オッタートン", "フルー・フルー", "ガゼル"],
         correct: 0,
-        image: "pics/Mr.ビッグ.exif"
+        image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
         question: "ミスター・ビッグの むすめさんの なまえは？",
@@ -95,47 +99,43 @@ const quizData = [
         question: "ナチュリストクラブにいる、ヤクの なまえは？",
         choices: ["ヤックス", "マンチャス", "ボゴ", "ニック"],
         correct: 0,
-        image: "pics/ヤックス.exif"
+        image: ["pics/ヤックス.exif", "pics/ヤックス２.exif"]
     },
     {
         question: "ドロボウを していた、イタチの なまえは？",
         choices: ["デューク・ウィーゼルトン", "ニック・ワイルド", "フィニック", "フラッシュ"],
         correct: 0,
-        image: "pics/デューク・ウィーゼルトン.exif"
+        image: ["pics/デューク・ウィーゼルトン.exif", "pics/デューク・ウィーゼルトン２.exif"]
     },
     {
         question: "ズートピアの だいにんき かしゅ。なまえは？",
         choices: ["ガゼル", "ベルウェザー", "フラッシュ", "ジュディ"],
         correct: 0,
-        image: "pics/ガゼル.exif"
+        image: ["pics/ガゼル.exif", "pics/ガゼル２.exif"]
     },
     {
-        question: "ジュディが けいさつしょで さいしょに まかされた おしごとは？",
-        choices: ["ちゅうしゃ いはんの とりしまり", "ドロボウつかまえ", "まいごさがし", "こうつうせいり"],
-        correct: 0
-    },
-    {
-        question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスの なまえは？",
-        choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
-        correct: 0
+        question: "ニュースを つたえる、トナカイの なまえは？",
+        choices: ["ピーター・ムースブリッジ", "ニック", "ボゴ", "ライオンハート"],
+        correct: 0,
+        image: "pics/ピーター・ムースブリッジ.webp"
     },
     {
         question: "こどものころ ジュディを いじめていたけれど、おとなになって なかよくなった キツネは？",
         choices: ["ギデオン・グレー", "ニック・ワイルド", "フィニック", "ボゴ"],
         correct: 0,
-        image: "pics/ギディオン-グレー.exif"
+        image: ["pics/ギディオン・グレー.exif", "pics/ギディオン・グレー２.exif"]
     },
     {
         question: "しゅじんこうの ジュディは、なんの どうぶつ？",
         choices: ["うさぎ", "きつね", "ひつじ", "ちーたー"],
         correct: 0,
-        image: "pics/ホップス.exif"
+        image: ["pics/ホップス.exif", "pics/ホップス２.exif"]
     },
     {
         question: "ニックは、なんの どうぶつ？",
         choices: ["きつね", "おおかみ", "とら", "らくだ"],
         correct: 0,
-        image: "pics/ワイルド.exif"
+        image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
         question: "ニックが ジュディを よぶときに つかう、やさいの なまえは？",
@@ -146,7 +146,7 @@ const quizData = [
         question: "ベルウェザー ふくしちょうは、なんの どうぶつ？",
         choices: ["ひつじ", "やぎ", "うし", "うま"],
         correct: 0,
-        image: "pics/ベルウェザー.exif"
+        image: ["pics/ベルウェザー.exif", "pics/ベルウェザー２.exif"]
     },
     {
         question: "どうぶつたちを おこらせてしまう、こわい おはなの なまえは？",
@@ -157,7 +157,7 @@ const quizData = [
         question: "うけつけの クロウハウザーは、なんの どうぶつ？",
         choices: ["ちーたー", "らいおん", "ひょう", "くま"],
         correct: 0,
-        image: "pics/クロウハウザー.exif"
+        image: ["pics/クロウハウザー.exif", "pics/クロウハウザー2.exif"]
     },
     {
         question: "めんきょせんたーで はたらく フラッシュは、なんの どうぶつ？",
@@ -174,7 +174,7 @@ const quizData = [
         question: "とっても ちいさな ミスター・ビッグは、なんの どうぶつ？",
         choices: ["ねずみ", "はむすたー", "りす", "もぐら"],
         correct: 0,
-        image: "pics/Mr.ビッグ.exif"
+        image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
         question: "ズートピアの しゅだいか（うた）の なまえは？",
@@ -189,6 +189,16 @@ const quizData = [
     {
         question: "ジュディは、なんにん きょうだい？",
         choices: ["275ひき", "10ひき", "50ひき", "100ひき"],
+        correct: 0
+    },
+    {
+        question: "ジュディが けいさつしょで さいしょに まかされた おしごとは？",
+        choices: ["ちゅうしゃ いはんの とりしまり", "ドロボウつかまえ", "まいごさがし", "こうつうせいり"],
+        correct: 0
+    },
+    {
+        question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスの なまえは？",
+        choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
         correct: 0
     }
 ];
@@ -229,7 +239,33 @@ function startGame() {
     currentQuestion = 0;
     score = 0;
     wrongScore = 0;
-    shuffledQuiz = shuffle([...quizData]).slice(0, 10);
+
+    // History-based selection logic
+    let history = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+    let allIndices = Array.from({ length: quizData.length }, (_, i) => i);
+
+    // Find questions NOT in the recent history
+    let available = allIndices.filter(index => !history.includes(index));
+
+    // If we have fewer than 10 available, clear history or shuffle the remainder
+    if (available.length < 10) {
+        history = []; // Reset history if we've seen almost everything
+        available = allIndices;
+    }
+
+    // Randomly pick 10 from available questions
+    shuffle(available);
+    let selectedIndices = available.slice(0, 10);
+
+    // Update history: Add new ones and keep only the last 25 to avoid repeats "for a while"
+    history = [...history, ...selectedIndices];
+    if (history.length > 25) {
+        history = history.slice(-25);
+    }
+    localStorage.setItem('quizHistory', JSON.stringify(history));
+
+    shuffledQuiz = selectedIndices.map(i => quizData[i]);
+
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
     scoreBoard.classList.remove("hidden");
@@ -239,13 +275,27 @@ function startGame() {
 
 function showQuestion() {
     const q = shuffledQuiz[currentQuestion];
-    questionText.innerText = q.question;
+    // Split into two lines at the first punctuation mark (。 or 、)
+    let displayQuestion = q.question;
+    const splitIndex = q.question.search(/[。、]/);
+    if (splitIndex !== -1 && splitIndex < q.question.length - 1) {
+        displayQuestion = q.question.slice(0, splitIndex + 1) + "\n" + q.question.slice(splitIndex + 1);
+    }
+    questionText.innerText = displayQuestion;
+
     if (q.image) {
-        questionImage.src = q.image;
+        let imageSrc = "";
+        if (Array.isArray(q.image)) {
+            imageSrc = q.image[Math.floor(Math.random() * q.image.length)];
+        } else {
+            imageSrc = q.image;
+        }
+        questionImage.src = imageSrc;
         imageContainer.classList.remove("hidden");
     } else {
         imageContainer.classList.add("hidden");
     }
+
     currentChoices = q.choices.map((choice, index) => ({
         text: choice,
         isCorrect: index === q.correct
@@ -301,7 +351,8 @@ function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
     scoreBoard.classList.add("hidden");
-    finalScoreText.innerText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
+    finalScoreScoreText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
+    finalScoreText.innerText = finalScoreScoreText;
     const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
         score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
             "また あそんでね！";

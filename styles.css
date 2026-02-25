@@ -98,6 +98,7 @@ header {
 #question-text {
     font-size: 1.2rem;
     line-height: 1.6;
+    white-space: pre-wrap;
     font-weight: 700;
 }
 
