@@ -446,6 +446,8 @@ function showResult() {
     finalScoreText.innerText = finalScoreLabel;
 
     if (score === shuffledQuiz.length) {
+        const sePerfect = document.getElementById("se-perfect");
+        if (sePerfect) sePerfect.play().catch(e => console.log("Audio play failed:", e));
         resultMessage.innerHTML = `すごい！ <ruby>全問正解<rt>ぜんもんせいかい</rt></ruby>！<br>きみは ズートピア・マスターだ！`;
         hanamaruContainer.classList.remove("hidden");
         if (typeof confetti !== 'undefined') {
