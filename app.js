@@ -341,12 +341,37 @@ function startGame() {
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
     scoreBoard.classList.remove("hidden");
+    // Initial score update
     updateScore();
     showQuestion();
 }
 
+// Sound stopping helper
+function stopQuizSounds() {
+    if (seStart) {
+        seStart.pause();
+        seStart.currentTime = 0;
+    }
+    if (seTimer) {
+        seTimer.pause();
+        seTimer.currentTime = 0;
+    }
+}
+
 function showQuestion() {
     const q = shuffledQuiz[currentQuestion];
+
+    // Play start sound immediately
+    if (seStart) seStart.play().catch(e => console.log("Start audio failed:", e));
+
+    // Play timer after 1 second
+    setTimeout(() => {
+        // Only play if we haven't answered yet (check if quizScreen is still active and no highlight added)
+        const firstBtn = choicesBtns[0];
+        if (firstBtn && !firstBtn.classList.contains("correct-highlight") && !firstBtn.classList.contains("wrong-highlight")) {
+            if (seTimer) seTimer.play().catch(e => console.log("Timer audio failed:", e));
+        }
+    }, 1000);
 
     // Split into two lines: prioritize '。', then '、'
     let displayQuestion = q.question;
@@ -402,6 +427,7 @@ function updateScore() {
 }
 
 function checkAnswer(index) {
+    stopQuizSounds();
     const isCorrect = currentChoices[index].isCorrect;
     if (isCorrect) {
         score++;
