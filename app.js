@@ -123,7 +123,7 @@ const quizData = [
         question: "こどものころ ジュディを いじめていたけれど、おとなになって なかよくなった キツネは？",
         choices: ["ギデオン・グレー", "ニック・ワイルド", "フィニック", "ボゴ"],
         correct: 0,
-        image: ["pics/ギディオン・グレー.exif", "pics/ギディオン・グレー２.exif"]
+        image: ["pics/ギディオン-グレー.exif", "pics/ギディオン-グレー２.exif"]
     },
     {
         question: "しゅじんこうの ジュディは、なんの どうぶつ？",
@@ -162,8 +162,7 @@ const quizData = [
     {
         question: "めんきょせんたーで はたらく フラッシュは、なんの どうぶつ？",
         choices: ["なまけもの", "かめ", "ぞう", "かば"],
-        correct: 0,
-        image: "pics/フラッシュ.exif"
+        correct: 0
     },
     {
         question: "ミスター・ビッグは、どこの まちの ボス？",
@@ -189,6 +188,26 @@ const quizData = [
     {
         question: "ジュディは、なんにん きょうだい？",
         choices: ["275ひき", "10ひき", "50ひき", "100ひき"],
+        correct: 0
+    },
+    {
+        question: "2025ねんに こうかいされる「ズートピア２」。なぞの へびの なまえは？",
+        choices: ["ゲイリー", "パウバート", "ニブルズ", "ヘイスース"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２で、ジュディのファンだといって そうさを てつだってくれる、オオヤマネコは？",
+        choices: ["パウバート", "ゲイリー", "ニブルズ", "ニック"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２は、なんねんの ふゆに こうかいされるかな？",
+        choices: ["2025ねん", "2024ねん", "2026ねん", "2030ねん"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２で、ズートピアの なぞについて はなしている ビーバーの なまえは？",
+        choices: ["ニブルズ", "ボニー", "スチュー", "フラッシュ"],
         correct: 0
     },
     {
@@ -275,9 +294,14 @@ function startGame() {
 
 function showQuestion() {
     const q = shuffledQuiz[currentQuestion];
-    // Split into two lines at the first punctuation mark (。 or 、)
+
+    // Split into two lines: prioritize '。', then '、'
     let displayQuestion = q.question;
-    const splitIndex = q.question.search(/[。、]/);
+    let splitIndex = q.question.indexOf('。');
+    if (splitIndex === -1) {
+        splitIndex = q.question.indexOf('、');
+    }
+
     if (splitIndex !== -1 && splitIndex < q.question.length - 1) {
         displayQuestion = q.question.slice(0, splitIndex + 1) + "\n" + q.question.slice(splitIndex + 1);
     }
