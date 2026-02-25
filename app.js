@@ -338,6 +338,7 @@ function startGame() {
 
     shuffledQuiz = selectedIndices.map(i => quizData[i]);
 
+    document.getElementById("start-screen").classList.add("hidden");
     document.getElementById("hanamaru-container").classList.add("hidden");
     document.getElementById("fireworks-container").innerHTML = "";
 
@@ -555,4 +556,4 @@ function createFirework(x, y) {
     }
 }
 
-window.onload = startGame;
+// ページ読み込み時に自動で始めない（スタートボタンを待つ）

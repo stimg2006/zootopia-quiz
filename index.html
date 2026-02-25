@@ -23,13 +23,22 @@
     <div id="game-container">
         <header>
             <h1 id="title">ズートピア クイズ</h1>
-            <div class="score-container" id="score-board">
+            <div class="score-container hidden" id="score-board">
                 <div>せいかい: <span id="score">0</span></div>
                 <div>まちがい: <span id="wrong-score">0</span></div>
             </div>
         </header>
 
-        <main id="quiz-screen">
+        <div id="start-screen">
+            <div id="start-character-container">
+                <img src="pics/ホップス.exif" alt="ジュディ" class="start-char">
+                <img src="pics/ワイルド.exif" alt="ニック" class="start-char">
+            </div>
+            <p class="start-message">ズートピア クイズを<br>はじめるよ！</p>
+            <button id="start-game-btn" onclick="startGame()">スタート！</button>
+        </div>
+
+        <main id="quiz-screen" class="hidden">
             <div id="question-container">
                 <div id="image-container" class="hidden">
                     <img id="question-image" src="" alt="キャラクター">
