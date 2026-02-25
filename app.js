@@ -210,7 +210,7 @@ const choicesBtns = [
 ];
 const scoreDisplay = document.getElementById("score");
 const wrongScoreDisplay = document.getElementById("wrong-score");
-const remainingDisplay = document.getElementById("remaining");
+const scoreBoard = document.getElementById("score-board");
 const quizScreen = document.getElementById("quiz-screen");
 const resultScreen = document.getElementById("result-screen");
 const finalScoreText = document.getElementById("final-score");
@@ -232,7 +232,7 @@ function startGame() {
     shuffledQuiz = shuffle([...quizData]).slice(0, 10);
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
-    document.querySelector(".score-container").classList.remove("hidden");
+    scoreBoard.classList.remove("hidden");
     updateScore();
     showQuestion();
 }
@@ -255,7 +255,6 @@ function showQuestion() {
         choicesBtns[index].innerText = choiceObj.text;
         choicesBtns[index].classList.remove("correct-highlight", "wrong-highlight");
     });
-    remainingDisplay.innerText = shuffledQuiz.length - currentQuestion;
 }
 
 function updateScore() {
@@ -282,7 +281,6 @@ function checkAnswer(index) {
         if (currentQuestion < shuffledQuiz.length) {
             showQuestion();
         } else {
-            if (remainingDisplay) remainingDisplay.innerText = "0";
             showResult();
         }
     }, 2500);
@@ -302,7 +300,7 @@ function showFeedback(isCorrect) {
 function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
-    document.querySelector(".score-container").classList.add("hidden");
+    scoreBoard.classList.add("hidden");
     finalScoreText.innerText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
     const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
         score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
