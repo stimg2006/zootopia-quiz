@@ -422,8 +422,8 @@ function showQuestion() {
 }
 
 function updateScore() {
-    scoreDisplay.innerText = `せいかい: ${score}`;
-    wrongScoreDisplay.innerText = `まちがい: ${wrongScore}`;
+    scoreDisplay.innerText = score;
+    wrongScoreDisplay.innerText = wrongScore;
 }
 
 function checkAnswer(index) {
