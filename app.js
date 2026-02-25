@@ -115,15 +115,81 @@ const quizData = [
         correct: 0
     },
     {
-        question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスは？",
-        choices: ["にくきゅう アイスキャンディー", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
+        question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスの なまえは？",
+        choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
         correct: 0
     },
     {
         question: "こどものころ ジュディを いじめていたけれど、おとなになって なかよくなった キツネは？",
         choices: ["ギデオン・グレー", "ニック・ワイルド", "フィニック", "ボゴ"],
         correct: 0,
-        image: "pics/ギディオン・グレー.exif"
+        image: "pics/ギディオン-グレー.exif"
+    },
+    {
+        question: "しゅじんこうの ジュディは、なんの どうぶつ？",
+        choices: ["うさぎ", "きつね", "ひつじ", "ちーたー"],
+        correct: 0,
+        image: "pics/ホップス.exif"
+    },
+    {
+        question: "ニックは、なんの どうぶつ？",
+        choices: ["きつね", "おおかみ", "とら", "らくだ"],
+        correct: 0,
+        image: "pics/ワイルド.exif"
+    },
+    {
+        question: "ニックが ジュディを よぶときに つかう、やさいの なまえは？",
+        choices: ["にんじん", "たまねぎ", "ぴーまん", "じゃがいも"],
+        correct: 0
+    },
+    {
+        question: "ベルウェザー ふくしちょうは、なんの どうぶつ？",
+        choices: ["ひつじ", "やぎ", "うし", "うま"],
+        correct: 0,
+        image: "pics/ベルウェザー.exif"
+    },
+    {
+        question: "どうぶつたちを おこらせてしまう、こわい おはなの なまえは？",
+        choices: ["よるの とおぼえ", "あかりの はな", "ねむりの くさ", "どくの み"],
+        correct: 0
+    },
+    {
+        question: "うけつけの クロウハウザーは、なんの どうぶつ？",
+        choices: ["ちーたー", "らいおん", "ひょう", "くま"],
+        correct: 0,
+        image: "pics/クロウハウザー.exif"
+    },
+    {
+        question: "めんきょせんたーで はたらく フラッシュは、なんの どうぶつ？",
+        choices: ["なまけもの", "かめ", "ぞう", "かば"],
+        correct: 0,
+        image: "pics/フラッシュ.exif"
+    },
+    {
+        question: "ミスター・ビッグは、どこの まちの ボス？",
+        choices: ["つんどらたうん", "さばら・すくえあ", "れいんふぉれすと", "だうんたうん"],
+        correct: 0
+    },
+    {
+        question: "とっても ちいさな ミスター・ビッグは、なんの どうぶつ？",
+        choices: ["ねずみ", "はむすたー", "りす", "もぐら"],
+        correct: 0,
+        image: "pics/Mr.ビッグ.exif"
+    },
+    {
+        question: "ズートピアの しゅだいか（うた）の なまえは？",
+        choices: ["トライ・エヴリシング", "ハッピー・ソング", "ズートピア・マーチ", "あしたへ ジャンプ"],
+        correct: 0
+    },
+    {
+        question: "ジュディが おとうさんたちから よばれている あだなは？",
+        choices: ["じゅーじゅー", "じゅでぃー", "ぴょんぴょん", "うさちゃん"],
+        correct: 0
+    },
+    {
+        question: "ジュディは、なんにん きょうだい？",
+        choices: ["275ひき", "10ひき", "50ひき", "100ひき"],
+        correct: 0
     }
 ];
 
@@ -166,6 +232,7 @@ function startGame() {
     shuffledQuiz = shuffle([...quizData]).slice(0, 10);
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
+    document.querySelector(".score-container").classList.remove("hidden");
     updateScore();
     showQuestion();
 }
@@ -235,6 +302,7 @@ function showFeedback(isCorrect) {
 function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
+    document.querySelector(".score-container").classList.add("hidden");
     finalScoreText.innerText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
     const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
         score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
