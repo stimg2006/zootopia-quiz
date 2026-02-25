@@ -471,17 +471,27 @@ function showFeedback(isCorrect) {
 }
 
 function showResult() {
+    // Re-fetch to be safe
+    const resultScreen = document.getElementById("result-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const scoreBoard = document.getElementById("score-board");
+    const finalScoreText = document.getElementById("final-score");
+    const resultMessage = document.getElementById("result-message");
+    const hanamaruContainer = document.getElementById("hanamaru-container");
+
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
     scoreBoard.classList.add("hidden");
-    const finalScoreLabel = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
-    finalScoreText.innerText = finalScoreLabel;
 
-    if (score === shuffledQuiz.length) {
+    const totalQ = shuffledQuiz.length || 10;
+    const finalScoreLabel = `${totalQ}てん ちゅう ${score}てん だったよ！`;
+    if (finalScoreText) finalScoreText.innerText = finalScoreLabel;
+
+    if (score === totalQ) {
         const sePerfect = document.getElementById("se-perfect");
         if (sePerfect) sePerfect.play().catch(e => console.log("Audio play failed:", e));
-        resultMessage.innerHTML = `すごい！ <ruby>全問正解<rt>ぜんもんせいかい</rt></ruby>！<br>きみは ズートピア・マスターだ！`;
-        hanamaruContainer.classList.remove("hidden");
+        if (resultMessage) resultMessage.innerHTML = `すごい！ <ruby>全問正解<rt>ぜんもんせいかい</rt></ruby>！<br>きみは ズートピア・マスターだ！`;
+        if (hanamaruContainer) hanamaruContainer.classList.remove("hidden");
         if (typeof confetti !== 'undefined') {
             confetti({
                 particleCount: 150,
@@ -490,9 +500,9 @@ function showResult() {
             });
         }
     } else if (score >= 7) {
-        resultMessage.innerHTML = `よく がんばったね！<br>あと <ruby>少<rt>すこ</rt></ruby>しで <ruby>満点<rt>まんてん</rt></ruby>だ！`;
+        if (resultMessage) resultMessage.innerHTML = `よく がんばったね！<br>あと <ruby>少<rt>すこ</rt></ruby>しで <ruby>満点<rt>まんてん</rt></ruby>だ！`;
     } else {
-        resultMessage.innerHTML = `おつかれさま！<br>もう <ruby>一回<rt>いっかい</rt></ruby> <ruby>挑戦<rt>ちょうせん</rt></ruby>してみよう！`;
+        if (resultMessage) resultMessage.innerHTML = `おつかれさま！<br>もう <ruby>一回<rt>いっかい</rt></ruby> <ruby>挑戦<rt>ちょうせん</rt></ruby>してみよう！`;
     }
 
     saveAndShowHistory();
@@ -500,16 +510,31 @@ function showResult() {
 
 function saveAndShowHistory() {
     const historyList = document.getElementById("history-list");
-    let scores = JSON.parse(localStorage.getItem('quizScoreHistory') || '[]');
+    if (!historyList) return;
+
+    let scores = [];
+    try {
+        scores = JSON.parse(localStorage.getItem('quizScoreHistory') || '[]');
+    } catch (e) {
+        console.error("History parse failed", e);
+        scores = [];
+    }
 
     // Add current score with date
     const now = new Date();
-    const dateStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
-    scores.unshift({ date: dateStr, score: score, total: shuffledQuiz.length });
+    const mm = (now.getMinutes() < 10 ? '0' : '') + now.getMinutes();
+    const dateStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours()}:${mm}`;
+
+    const totalQ = shuffledQuiz.length || 10;
+    scores.unshift({ date: dateStr, score: score, total: totalQ });
 
     // Keep only last 5
     scores = scores.slice(0, 5);
-    localStorage.setItem('quizScoreHistory', JSON.stringify(scores));
+    try {
+        localStorage.setItem('quizScoreHistory', JSON.stringify(scores));
+    } catch (e) {
+        console.error("History save failed", e);
+    }
 
     // Display
     historyList.innerHTML = scores.map(item => `
