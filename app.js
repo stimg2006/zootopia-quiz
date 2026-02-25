@@ -123,7 +123,7 @@ const quizData = [
         question: "こどものころ ジュディを いじめていたけれど、おとなになって なかよくなった キツネは？",
         choices: ["ギデオン・グレー", "ニック・ワイルド", "フィニック", "ボゴ"],
         correct: 0,
-        image: ["pics/ギディオン-グレー.exif", "pics/ギディオン-グレー２.exif"]
+        image: ["pics/ギディオン・グレー.exif", "pics/ギディオン・グレー２.exif"]
     },
     {
         question: "しゅじんこうの ジュディは、なんの どうぶつ？",
@@ -171,7 +171,7 @@ const quizData = [
     },
     {
         question: "とっても ちいさな ミスター・ビッグは、なんの どうぶつ？",
-        choices: ["ねずみ", "はむすたー", "りす", "もぐら"],
+        choices: ["トガリネズミ", "はむすたー", "りす", "もぐら"],
         correct: 0,
         image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
@@ -219,6 +219,41 @@ const quizData = [
         question: "ニックが だいすきな、あかい 肉球（にくきゅう）の かたちをした アイスの なまえは？",
         choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス"],
         correct: 0
+    },
+    {
+        question: "ニックが こどものころに はいりたかった、チームの なまえは？",
+        choices: ["ジュニア・レンジャー・スカウト", "けいさつたい", "アイスクリームやさん", "サッカーチーム"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２で、ニックと ジュディが はじめて ちょうさに いく、みずべの まちは？",
+        choices: ["マシュラン（Marshlands）", "サハラ・スクエア", "ツンドラ・タウン", "レインフォレスト"],
+        correct: 0
+    },
+    {
+        question: "へびの ゲイリーの こえを たんとうした、ゆうめいな はいゆうさんは？",
+        choices: ["キー・ホイ・クァン", "トム・ハンクス", "ブラッド・ピット", "アンパンマン"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２で、じけんの カギを にぎる、今まで ズートピアに いなかった どうぶつたちは？",
+        choices: ["はちゅうるい（へびや とかげ）", "とり（タカや スズメ）", "さかな", "むし"],
+        correct: 0
+    },
+    {
+        question: "よこくへんで、ニックと ジュディが ゲイリーを つかまえるために のっていた のりものは？",
+        choices: ["ボート", "パトカー", "ヘリコプター", "スケートボード"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２で、ニックの けいさつかんとしての ランク（かいきゅう）は？",
+        choices: ["ジュディと おなじ あいぼう", "ジュディの じょうし", "まだ みならい", "しょちょう"],
+        correct: 0
+    },
+    {
+        question: "ズートピア２に でてくる へびの ゲイリー。あしは あるかな？",
+        choices: ["あしは ない（へびだから）", "４ほん ある", "２ほん ある", "１００ぽん ある"],
+        correct: 0
     }
 ];
 
@@ -245,6 +280,8 @@ const resultScreen = document.getElementById("result-screen");
 const finalScoreText = document.getElementById("final-score");
 const feedbackOverlay = document.getElementById("feedback-overlay");
 const feedbackIcon = document.getElementById("feedback-icon");
+const seCorrect = document.getElementById("se-correct");
+const seWrong = document.getElementById("se-wrong");
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -285,6 +322,9 @@ function startGame() {
 
     shuffledQuiz = selectedIndices.map(i => quizData[i]);
 
+    document.getElementById("hanamaru-container").classList.add("hidden");
+    document.getElementById("fireworks-container").innerHTML = "";
+
     resultScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
     scoreBoard.classList.remove("hidden");
@@ -303,9 +343,9 @@ function showQuestion() {
     }
 
     if (splitIndex !== -1 && splitIndex < q.question.length - 1) {
-        displayQuestion = q.question.slice(0, splitIndex + 1) + "\n" + q.question.slice(splitIndex + 1);
+        displayQuestion = q.question.slice(0, splitIndex + 1) + "<br>" + q.question.slice(splitIndex + 1).trim();
     }
-    questionText.innerText = displayQuestion;
+    questionText.innerHTML = displayQuestion;
 
     if (q.image) {
         let imageSrc = "";
@@ -320,11 +360,14 @@ function showQuestion() {
         imageContainer.classList.add("hidden");
     }
 
+    // Create an array of choice objects and shuffle them
     currentChoices = q.choices.map((choice, index) => ({
         text: choice,
         isCorrect: index === q.correct
     }));
     shuffle(currentChoices);
+
+    // Update buttons with shuffled choices
     currentChoices.forEach((choiceObj, index) => {
         choicesBtns[index].innerText = choiceObj.text;
         choicesBtns[index].classList.remove("correct-highlight", "wrong-highlight");
@@ -342,12 +385,14 @@ function checkAnswer(index) {
         score++;
         updateScore();
         choicesBtns[index].classList.add("correct-highlight");
+        if (seCorrect) seCorrect.play().catch(e => console.log("Audio play failed:", e));
     } else {
         wrongScore++;
         updateScore();
         choicesBtns[index].classList.add("wrong-highlight");
         const correctIndex = currentChoices.findIndex(c => c.isCorrect);
         choicesBtns[correctIndex].classList.add("correct-highlight");
+        if (seWrong) seWrong.play().catch(e => console.log("Audio play failed:", e));
     }
     showFeedback(isCorrect);
     currentQuestion++;
@@ -375,12 +420,81 @@ function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
     scoreBoard.classList.add("hidden");
-    finalScoreScoreText = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
-    finalScoreText.innerText = finalScoreScoreText;
-    const message = score === shuffledQuiz.length ? "すごーい！まんてんだ！" :
-        score >= 7 ? "やったね！<br>ズートピア 博士だ！" :
-            "また あそんでね！";
-    document.getElementById("result-message").innerHTML = message;
+    const finalScoreLabel = `${shuffledQuiz.length}てん ちゅう ${score}てん だったよ！`;
+    finalScoreText.innerText = finalScoreLabel;
+
+    if (score === shuffledQuiz.length) {
+        // Perfect score celebration
+        document.getElementById("hanamaru-container").classList.remove("hidden");
+        triggerFireworks();
+        document.getElementById("result-message").innerHTML = "すごーい！まんてんだ！💮";
+    } else {
+        document.getElementById("hanamaru-container").classList.add("hidden");
+        const message = score >= 7 ? "やったね！<br>ズートピア 博士だ！" : "また あそんでね！";
+        document.getElementById("result-message").innerHTML = message;
+    }
+
+    saveAndShowHistory();
+}
+
+function saveAndShowHistory() {
+    const historyList = document.getElementById("history-list");
+    let scores = JSON.parse(localStorage.getItem('quizScoreHistory') || '[]');
+
+    // Add current score with date
+    const now = new Date();
+    const dateStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+    scores.unshift({ date: dateStr, score: score, total: shuffledQuiz.length });
+
+    // Keep only last 5
+    scores = scores.slice(0, 5);
+    localStorage.setItem('quizScoreHistory', JSON.stringify(scores));
+
+    // Display
+    historyList.innerHTML = scores.map(item => `
+        <li>
+            <span>${item.date}</span>
+            <span>${item.total}もん ちゅう ${item.score}てん</span>
+        </li>
+    `).join('');
+}
+
+function triggerFireworks() {
+    const container = document.getElementById("fireworks-container");
+    container.innerHTML = "";
+    for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+            const x = Math.random() * 80 + 10; // 10% to 90%
+            const y = Math.random() * 50 + 10; // 10% to 60%
+            createFirework(x, y);
+        }, i * 400);
+    }
+}
+
+function createFirework(x, y) {
+    const container = document.getElementById("fireworks-container");
+    const colors = ["#ff0000", "#ffa500", "#ffff00", "#00ff00", "#0000ff", "#ee82ee"];
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement("div");
+        particle.className = "firework";
+        const angle = (i * 360) / particleCount;
+        const distance = 100 + Math.random() * 50;
+        const tx = Math.cos(angle * Math.PI / 180) * distance;
+        const ty = Math.sin(angle * Math.PI / 180) * distance;
+
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = x + "%";
+        particle.style.top = y + "%";
+        particle.style.setProperty("--tx", `${tx}px`);
+        particle.style.setProperty("--ty", `${ty}px`);
+
+        container.appendChild(particle);
+
+        // Remove particle after animation
+        setTimeout(() => particle.remove(), 1500);
+    }
 }
 
 window.onload = startGame;

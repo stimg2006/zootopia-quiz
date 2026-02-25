@@ -46,8 +46,14 @@
         </main>
 
         <div id="result-screen" class="hidden">
+            <div id="hanamaru-container" class="hidden">💮</div>
+            <div id="fireworks-container"></div>
             <h2 id="result-message">おわり！</h2>
             <p id="final-score">10てん ちゅう 0てん だったよ！</p>
+            <div id="history-container">
+                <h3>これまでの きろく</h3>
+                <ul id="history-list"></ul>
+            </div>
             <button id="restart-btn" onclick="startGame()">もういちど あそぶ</button>
         </div>
 
@@ -55,6 +61,9 @@
             <div id="feedback-icon"></div>
         </div>
     </div>
+
+    <audio id="se-correct" src="sounds/correct.mp3" preload="auto"></audio>
+    <audio id="se-wrong" src="sounds/wrong.mp3" preload="auto"></audio>
 
     <script src="app.js"></script>
 </body>
