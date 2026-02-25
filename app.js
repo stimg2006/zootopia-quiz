@@ -39,13 +39,13 @@ const quizData = [
         question: "ジュディの おかあさんの <ruby>名前<rt>なまえ</rt></ruby>は？",
         choices: ["ボニー", "ベルウェザー", "プリシラ", "フルー・フルー", "ガゼル", "オッタートン<ruby>夫人<rt>ふじん</rt></ruby>"],
         correct: 0,
-        image: "pics/スチュー・ホップス.png"
+        image: "pics/ボニー・ホップス.png"
     },
     {
         question: "ジュディの おとうさんの <ruby>名前<rt>なまえ</rt></ruby>は？",
         choices: ["スチュー", "ニック", "ボゴ", "フラッシュ", "ギデオン", "エミット"],
         correct: 0,
-        image: "pics/ボニー・ホップス.png"
+        image: "pics/スチュー・ホップス.png"
     },
     {
         question: "「だんなさんが いなくなったの」と <ruby>相談<rt>そうだん</rt></ruby>にきた カワウソさんは？",
