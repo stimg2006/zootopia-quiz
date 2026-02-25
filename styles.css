@@ -120,7 +120,7 @@ header {
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     min-height: 60px;
@@ -134,15 +134,15 @@ header {
 ruby {
     display: inline-flex;
     flex-direction: column-reverse;
-    vertical-align: baseline;
+    vertical-align: middle;
     align-items: center;
 }
 
 rt {
     display: block;
-    font-size: 0.45em;
+    font-size: 0.5em;
     line-height: 1;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
 }
 
 .choice-btn:active {
