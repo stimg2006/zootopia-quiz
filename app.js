@@ -1,7 +1,7 @@
 const quizData = [
     {
-        question: "この キャラクターの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ジュディ・ホップス", "ニック・ワイルド", "フィニック", "ボゴ<ruby>署長<rt>しょちょう</rt></ruby>", "ベルウェザー", "クロウハウザー"],
+        question: "この キャラクターの 名前（なまえ）は？",
+        choices: ["ジュディ・ホップス", "ニック・ワイルド", "フィニック", "ボゴ署長（しょちょう）", "ベルウェザー", "クロウハウザー"],
         correct: 0,
         image: ["pics/ホップス.exif", "pics/ホップス２.exif"]
     },
@@ -12,32 +12,32 @@ const quizData = [
         image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
-        question: "ズートピア<ruby>警察<rt>けいさつ</rt></ruby>の、こわい <ruby>署長<rt>しょちょう</rt></ruby>さんは？",
+        question: "ズートピア警察（けいさつ）の、こわい 署長（しょちょう）さんは？",
         choices: ["ボゴ", "スチュー", "ニック", "フラッシュ", "ライオンハート", "ヤックス"],
         correct: 0,
         image: ["pics/ボゴ.exif", "pics/ボゴ２.exif"]
     },
     {
-        question: "ドーナツが <ruby>大好き<rt>だいすき</rt></ruby>な、<ruby>警察署<rt>けいさつしょ</rt></ruby>の <ruby>受付<rt>うけつけ</rt></ruby>の チーターは？",
+        question: "ドーナツが 大好き（だいすき）な、警察署（けいさつしょ）の 受付（うけつけ）の チーターは？",
         choices: ["クロウハウザー", "ライオンハート", "マンチャス", "ギデオン", "ボゴ", "ニック"],
         correct: 0,
         image: ["pics/クロウハウザー.exif", "pics/クロウハウザー2.exif"]
     },
     {
-        question: "ズートピアの <ruby>市長<rt>しちょう</rt></ruby>さん。ライオンの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["レオドア・ライオンハート", "ボゴ<ruby>署長<rt>しょちょう</rt></ruby>", "スチュー", "ヤックス", "デューク", "フィニック"],
+        question: "ズートピアの 市長（しちょう）さん。ライオンの 名前（なまえ）は？",
+        choices: ["レオドア・ライオンハート", "ボゴ署長（しょちょう）", "スチュー", "ヤックス", "デューク", "フィニック"],
         correct: 0,
         image: ["pics/ライオンハート市長.exif", "pics/ライオンハート市長２.exif"]
     },
     {
-        question: "ひつじの <ruby>副市長<rt>ふくしちょう</rt></ruby>さんの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "ひつじの 副市長（ふくしちょう）さんの 名前（なまえ）は？",
         choices: ["ベルウェザー", "ボン・ホップス", "ガゼル", "ナギ", "プリシラ", "フルー・フルー"],
         correct: 0,
         image: ["pics/ベルウェザー.exif", "pics/ベルウェザー２.exif"]
     },
     {
-        question: "ジュディの おかあさんの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ボニー", "ベルウェザー", "プリシラ", "フルー・フルー", "ガゼル", "オッタートン<ruby>夫人<rt>ふじん</rt></ruby>"],
+        question: "ジュディの おかあさんの 名前（なまえ）は？",
+        choices: ["ボニー", "ベルウェザー", "プリシラ", "フルー・フルー", "ガゼル", "オッタートン夫人（ふじん）"],
         correct: 0,
         image: "pics/ボニー・ホップス.png"
     },
@@ -49,25 +49,25 @@ const quizData = [
         image: "pics/スチュー・ホップス.png"
     },
     {
-        question: "「だんなさんが いなくなったの」と <ruby>相談<rt>そうだん</rt></ruby>にきた カワウソさんは？",
-        choices: ["オッタートン<ruby>夫人<rt>ふじん</rt></ruby>", "ガゼル", "ジュディ", "プリシラ", "フルー・フルー", "ボニー"],
+        question: "「だんなさんが いなくなったの」と 相談（そうだん）にきた カワウソさんは？",
+        choices: ["オッタートン夫人（ふじん）", "ガゼル", "ジュディ", "プリシラ", "フルー・フルー", "ボニー"],
         correct: 0,
         image: "pics/オッタートンふじん.exif"
     },
     {
-        question: "いなくなった カワウソの おとうさんの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "いなくなった カワウソの おとうさんの 名前（なまえ）は？",
         choices: ["エミット", "ニック", "スチュー", "フィニック", "マンチャス", "ボゴ"],
         correct: 0,
         image: ["pics/エミット・オッタートン.exif", "pics/エミット・オッタートン２.jpg"]
     },
     {
-        question: "<ruby>事件<rt>じけん</rt></ruby>の ことを <ruby>知<rt>し</rt></ruby>っていた、ジャガーの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "事件（じけん）の ことを 知（し）っていた、ジャガーの 名前（なまえ）は？",
         choices: ["マンチャス", "ボゴ", "ヤックス", "デューク", "ニック", "フィニック"],
         correct: 0,
         image: ["pics/マンチャス.webp", "pics/マンチャス２.jpg"]
     },
     {
-        question: "ニックと いっしょに アイスを <ruby>売<rt>う</rt></ruby>っていた、ちいさな フェネックは？",
+        question: "ニックと いっしょに アイスを 売（う）っていた、ちいさな フェネックは？",
         choices: ["フィニック", "フラッシュ", "ミスター・ビッグ", "デューク", "ギデオン", "クロウハウザー"],
         correct: 0,
         image: ["pics/フィニック.exif", "pics/フィニック２.exif", "pics/フィニック３.exif"]
@@ -139,29 +139,29 @@ const quizData = [
         image: ["pics/ワイルド.exif", "pics/ワイルド２.exif"]
     },
     {
-        question: "ニックが ジュディを よぶときに つかう、やさいの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "ニックが ジュディを よぶときに つかう、やさいの 名前（なまえ）は？",
         choices: ["ニンジン", "タマネギ", "ピーマン", "ジャガイモ", "ナス", "キュウリ"],
         correct: 0
     },
     {
-        question: "ベルウェザー <ruby>副市長<rt>ふくしちょう</rt></ruby>は、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
+        question: "ベルウェザー 副市長（ふくしちょう）は、なんの 動物（どうぶつ）？",
         choices: ["ヒツジ", "ヤギ", "ウシ", "ウマ", "シカ", "ラクダ"],
         correct: 0,
         image: ["pics/ベルウェザー.exif", "pics/ベルウェザー２.exif"]
     },
     {
-        question: "<ruby>動物<rt>どうぶつ</rt></ruby>たちを おこらせてしまう、こわい おはなの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "動物（どうぶつ）たちを おこらせてしまう、こわい おはなの 名前（なまえ）は？",
         choices: ["よるのとおぼえ", "あかりの はな", "ねむりの くさ", "どくの み", "ひかりの つぼみ", "まほうの えだ"],
         correct: 0
     },
     {
-        question: "<ruby>受付<rt>うけつけ</rt></ruby>の クロウハウザーは、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
+        question: "受付（うけつけ）の クロウハウザーは、なんの 動物（どうぶつ）？",
         choices: ["チーター", "ライオン", "ヒョウ", "クマ", "トラ", "オオカミ"],
         correct: 0,
         image: ["pics/クロウハウザー.exif", "pics/クロウハウザー2.exif"]
     },
     {
-        question: "めんきょせんたーで <ruby>働<rt>はたら</rt></ruby>く フラッシュは、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
+        question: "めんきょせんたーで 働（はたら）く フラッシュは、なんの 動物（どうぶつ）？",
         choices: ["ナマケモノ", "カメ", "ゾウ", "カバ", "サイ", "ワニ"],
         correct: 0,
         image: "pics/フラッシュ.exif"
@@ -173,13 +173,13 @@ const quizData = [
         image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
-        question: "とっても ちいさな ミスター・ビッグは、なんの <ruby>動物<rt>どうぶつ</rt></ruby>？",
+        question: "とっても ちいさな ミスター・ビッグは、なんの 動物（どうぶつ）？",
         choices: ["トガリネズミ", "ハムスター", "リス", "モグラ", "ネズミ", "ウサギ"],
         correct: 0,
         image: ["pics/Mr.ビッグ.exif", "pics/Mr.ビッグ２.exif"]
     },
     {
-        question: "ズートピアの <ruby>主題歌<rt>しゅだいか</rt></ruby>（うた）の <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "ズートピアの 主題歌（しゅだいか）（うた）の 名前（なまえ）は？",
         choices: ["トライ・エヴリシング", "ハッピー・ソング", "ズートピア・マーチ", "あしたへ ジャンプ", "みんなで あそぼう", "きらきら スマイル"],
         correct: 0,
         image: ["pics/ガゼル.exif", "pics/ガゼル２.exif"]
@@ -190,103 +190,103 @@ const quizData = [
         correct: 0
     },
     {
-        question: "ジュディは、なんにん <ruby>兄弟<rt>きょうだい</rt></ruby>？",
+        question: "ジュディは、なんにん 兄弟（きょうだい）？",
         choices: ["275ひき", "10ひき", "50ひき", "100ひき", "200ひき", "500ひき"],
         correct: 0
     },
     {
-        question: "2025ねんに <ruby>公開<rt>こうかい</rt></ruby>される「ズートピア２」。なぞの へびの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "2025ねんに 公開（こうかい）される「ズートピア２」。なぞの へびの 名前（なまえ）は？",
         choices: ["ゲイリー", "パウバート", "ニブルズ", "ヘイスース", "ゼブロ", "ニック"],
         correct: 0
     },
     {
-        question: "ズートピア２で、ジュディのファンだといって <ruby>捜査<rt>そうさ</rt></ruby>を てつだってくれる、オオヤマネコは？",
+        question: "ズートピア２で、ジュディのファンだといって 捜査（そうさ）を てつだってくれる、オオヤマネコは？",
         choices: ["パウバート", "ゲイリー", "ニブルズ", "ニック", "フィニック", "ボゴ"],
         correct: 0
     },
     {
-        question: "ズートピア２は、なんねんの <ruby>冬<rt>ふゆ</rt></ruby>に <ruby>公開<rt>こうかい</rt></ruby>されるかな？",
+        question: "ズートピア２は、なんねんの 冬（ふゆ）に 公開（こうかい）されるかな？",
         choices: ["2025ねん", "2024ねん", "2026ねん", "2030ねん", "2035ねん", "2040ねん"],
         correct: 0
     },
     {
-        question: "ジュディが <ruby>警察署<rt>けいさつしょ</rt></ruby>で <ruby>最初<rt>さいしょ</rt></ruby>に まかされた おしごとは？",
-        choices: ["<ruby>駐車<rt>ちゅうしゃ</rt></ruby> <ruby>違反<rt>いはん</rt></ruby>の とりしまり", "ドロボウつかまえ", "<ruby>迷子<rt>まいご</rt></ruby>さがし", "<ruby>交通整理<rt>こうつうせいり</rt></ruby>", "おそうじ", "パトロール"],
+        question: "ジュディが 警察署（けいさつしょ）で 最初（さいしょ）に まかされた おしごとは？",
+        choices: ["駐車（ちゅうしゃ） 違反（いはん）の とりしまり", "ドロボウつかまえ", "迷子（まいご）さがし", "交通整理（こうつうせいり）", "おそうじ", "パトロール"],
         correct: 0
     },
     {
-        question: "ニックが <ruby>大好き<rt>だいすき</rt></ruby>な、あかい <ruby>肉球<rt>にくきゅう</rt></ruby>の かたちをした アイスの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "ニックが 大好き（だいすき）な、あかい 肉球（にくきゅう）の かたちをした アイスの 名前（なまえ）は？",
         choices: ["パウシクル（Pawpsicle）", "ドーナツ・アイス", "キツネ・アイス", "ズートピア・アイス", "ニンジン・アイス", "ペロペロキャンディー"],
         correct: 0
     },
     {
-        question: "ニックが こどものころに はいりたかった、チームの <ruby>名前<rt>なまえ</rt></ruby>は？",
-        choices: ["ジュニア・レンジャー・スカウト", "<ruby>警察隊<rt>けいさつたい</rt></ruby>", "アイスクリームやさん", "サッカーチーム", "<ruby>探検隊<rt>たんけんたい</rt></ruby>", "ヒーロークラブ"],
+        question: "ニックが こどものころに はいりたかった、チームの 名前（なまえ）は？",
+        choices: ["ジュニア・レンジャー・スカウト", "警察隊（けいさつたい）", "アイスクリームやさん", "サッカーチーム", "探検隊（たんけんたい）", "ヒーロークラブ"],
         correct: 0
     },
     {
-        question: "ズートピア２で、ニックと ジュディが はじめて <ruby>調査<rt>ちょうさ</rt></ruby>に <ruby>行<rt>い</rt></ruby>く、みずべの <ruby>町<rt>まち</rt></ruby>は？",
+        question: "ズートピア２で、ニックと ジュディが はじめて 調査（ちょうさ）に 行（い）く、みずべの 町（まち）は？",
         choices: ["マシュラン（Marshlands）", "サハラ・スクエア", "ツンドラ・タウン", "レインフォレスト", "サバンナ・セントラル", "ダウンタウン"],
         correct: 0
     },
     {
-        question: "ズートピア２で、<ruby>事件<rt>じけん</rt></ruby>の カギを にぎる、<ruby>今<rt>いま</rt></ruby>まで ズートピアに いなかった <ruby>動物<rt>どうぶつ</rt></ruby>たちは？",
-        choices: ["<ruby>爬虫類<rt>はちゅうるい</rt></ruby>（へびや とかげ）", "<ruby>鳥<rt>とり</rt></ruby>（タカや スズメ）", "<ruby>魚<rt>さかな</rt></ruby>", "<ruby>虫<rt>むし</rt></ruby>", "おばけ", "うちゅうじん"],
+        question: "ズートピア２で、事件（じけん）の カギを にぎる、今（いま）まで ズートピアに いなかった 動物（どうぶつ）たちは？",
+        choices: ["爬虫類（はちゅうるい）（へびや とかげ）", "鳥（とり）（タカや スズメ）", "魚（さかな）", "虫（むし）", "おばけ", "うちゅうじん"],
         correct: 0
     },
     {
-        question: "よこくへんで、ニックと ジュディが ゲイリーを つかまえるために のっていた <ruby>乗<rt>の</rt></ruby>りものは？",
-        choices: ["ボート", "パトカー", "ヘリコプター", "スケートボード", "<ruby>自転車<rt>じてんしゃ</rt></ruby>", "<ruby>気球<rt>ききゅう</rt></ruby>"],
+        question: "よこくへんで、ニックと ジュディが ゲイリーを つかまえるために のっていた 乗り（のり）ものは？",
+        choices: ["ボート", "パトカー", "ヘリコプター", "スケートボード", "自転車（じてんしゃ）", "気球（ききゅう）"],
         correct: 0
     },
     {
-        question: "ズートピア２で、ニックの <ruby>警察官<rt>けいさつかん</rt></ruby>としての ランク（かいきゅう）は？",
-        choices: ["ジュディと おなじ あいぼう", "ジュディの <ruby>上司<rt>じょうし</rt></ruby>", "まだ <ruby>見習<rt>みなら</rt></ruby>い", "<ruby>署長<rt>しょちょう</rt></ruby>", "えらーい ひと", "てつだい"],
+        question: "ズートピア２で、ニックの 警察官（けいさつかん）としての ランク（かいきゅう）は？",
+        choices: ["ジュディと おなじ あいぼう", "ジュディの 上司（じょうし）", "まだ 見習（みなら）い", "署長（しょちょう）", "えらーい ひと", "てつだい"],
         correct: 0
     },
     {
-        question: "ズートピア２に でてくる へびの ゲイリー。<ruby>足<rt>あし</rt></ruby>は あるかな？",
-        choices: ["<ruby>足<rt>あし</rt></ruby>は ない（へびだから）", "４ほん ある", "２ほん ある", "１００ぽん ある", "たくさん ある", "みじかいのが ある"],
+        question: "ズートピア２に でてくる へびの ゲイリー。足（あし）は あるかな？",
+        choices: ["足（あし）は ない（へびだから）", "４ほん ある", "２ほん ある", "１００ぽん ある", "たくさん ある", "みじかいのが ある"],
         correct: 0
     },
     {
-        question: "ズートピア２で ジュディのファンだと言っている、ビーバーの ニブルズ。<ruby>何<rt>なに</rt></ruby>を してる <ruby>人<rt>ひと</rt></ruby>？",
-        choices: ["<ruby>配信者<rt>はいしんしゃ</rt></ruby>", "洋服屋さん", "町の支配人", "<ruby>警察官<rt>けいさつかん</rt></ruby>", "<ruby>医者<rt>いしゃ</rt></ruby>", "<ruby>先生<rt>せんせい</rt></ruby>"],
+        question: "ズートピア２で ジュディのファンだと言っている、ビーバーの ニブルズ。何（なに）を してる 人（ひと）？",
+        choices: ["配信者（はいしんしゃ）", "洋服屋さん", "町の支配人", "警察官（けいさつかん）", "医者（いしゃ）", "先生（せんせい）"],
         correct: 0,
         image: "pics/ニブルズ.jpg"
     },
     {
-        question: "ズートピア２に でてくる、この<ruby>子<rt>こ</rt></ruby>の <ruby>名前<rt>なまえ</rt></ruby>は <ruby>何<rt>なに</rt></ruby>？",
+        question: "ズートピア２に でてくる、この子（こ）の 名前（なまえ）は 何（なに）？",
         choices: ["ヘイスース", "ポニースル", "カナ", "ピピン", "ニコ", "ルル"],
         correct: 0,
         image: "pics/ヘイスース.jpg"
     },
     {
-        question: "ズートピア２に でてくる、ゼブロ・ゼブラクストンの <ruby>口癖<rt>くちぐせ</rt></ruby>は <ruby>何<rt>なに</rt></ruby>？",
-        choices: ["シマってこう！", "ウマをあわせていこう！", "<ruby>大丈<rt>だいじょう</rt></ruby>夫！", "よろしくね！", "おはよー！", "がんばろう！"],
+        question: "ズートピア２に でてくる、ゼブロ・ゼブラクストンの 口癖（くちぐせ）は 何（なに）？",
+        choices: ["シマってこう！", "ウマをあわせていこう！", "大丈夫（だいじょうぶ）！", "よろしくね！", "おはよー！", "がんばろう！"],
         correct: 0,
         image: "pics/ゼブロ・ゼブラクストン.jpg"
     },
     {
-        question: "ひそかに「よるの とおぼえ」の <ruby>弾丸<rt>だんがん</rt></ruby>を <ruby>作<rt>つく</rt></ruby>っていた、ヒツジの <ruby>科学者<rt>かがくしゃ</rt></ruby>は？",
+        question: "ひそかに「よるの とおぼえ」の 弾丸（だんがん）を 作（つく）っていた、ヒツジの 科学者（かがくしゃ）は？",
         choices: ["ダグ", "ベルウェザー", "デューク", "フィニック", "ニック", "ボゴ"],
         correct: 0,
         image: ["pics/ダグ.exif", "pics/ダグ２.exif"]
     },
     {
-        question: "ナチュリストクラブにいる、ゾウの おんなのこの <ruby>名前<rt>なまえ</rt></ruby>は？",
+        question: "ナチュリストクラブにいる、ゾウの おんなのこの 名前（なまえ）は？",
         choices: ["ナンギ", "フルー・フルー", "ガゼル", "プリシラ", "ボニー", "ナギ"],
         correct: 0,
         image: ["pics/ナンギ.exif", "pics/ナンギ２.exif"]
     },
     {
-        question: "ゾウ<ruby>専用<rt>せんよう</rt></ruby>の アイスクリームショップの <ruby>店主<rt>てんしゅ</rt></ruby>さんは？",
+        question: "ゾウ専用（せんよう）の アイスクリームショップの 店主（てんしゅ）さんは？",
         choices: ["ジェリー・ジャンブー・ジュニア", "ニック", "ボゴ", "フラッシュ", "ギデオン", "エミット"],
         correct: 0,
         image: "pics/ジェリー・ジャンブー・ジュニア.exif"
     },
     {
-        question: "ズートピア<ruby>警察署<rt>けいさつしょ</rt></ruby>の、ガッシリした サイの <ruby>警察官<rt>けいさつかん</rt></ruby>は？",
+        question: "ズートピア警察署（けいさつしょ）の、ガッシリした サイの 警察官（けいさつかん）は？",
         choices: ["マックホーン", "ボゴ", "ニック", "クロウハウザー", "ライオンハート", "マンチャス"],
         correct: 0,
         image: "pics/マックホーン.exif"
@@ -513,7 +513,7 @@ function showResult() {
     if (score === totalQ) {
         const sePerfect = document.getElementById("se-perfect");
         if (sePerfect) sePerfect.play().catch(e => console.log("Audio play failed:", e));
-        if (resultMessage) resultMessage.innerHTML = `すごい！ <ruby>全問正解<rt>ぜんもんせいかい</rt></ruby>！<br>きみは ズートピア・マスターだ！`;
+        if (resultMessage) resultMessage.innerHTML = `すごい！ 全問正解（ぜんもんせいかい）！<br>きみは ズートピア・マスターだ！`;
         if (hanamaruContainer) hanamaruContainer.classList.remove("hidden");
         if (typeof confetti !== 'undefined') {
             confetti({
@@ -523,9 +523,9 @@ function showResult() {
             });
         }
     } else if (score >= 7) {
-        if (resultMessage) resultMessage.innerHTML = `よく がんばったね！<br>あと <ruby>少<rt>すこ</rt></ruby>しで <ruby>満点<rt>まんてん</rt></ruby>だ！`;
+        if (resultMessage) resultMessage.innerHTML = `よく がんばったね！<br>あと 少し（すこし）で 満点（まんてん）だ！`;
     } else {
-        if (resultMessage) resultMessage.innerHTML = `おつかれさま！<br>もう <ruby>一回<rt>いっかい</rt></ruby> <ruby>挑戦<rt>ちょうせん</rt></ruby>してみよう！`;
+        if (resultMessage) resultMessage.innerHTML = `おつかれさま！<br>もう 一回（いっかい） 挑戦（ちょうせん）してみよう！`;
     }
 
     saveAndShowHistory();
@@ -563,7 +563,7 @@ function saveAndShowHistory() {
     historyList.innerHTML = scores.map(item => `
         <li>
             <span>${item.date}</span>
-            <span>${item.total}<ruby>問<rt>もん</rt></ruby> <ruby>中<rt>ちゅう</rt></ruby> ${item.score}<ruby>点<rt>てん</rt></ruby></span>
+            <span>${item.total}問（もん） 中（ちゅう） ${item.score}点（てん）</span>
         </li>
     `).join('');
 }

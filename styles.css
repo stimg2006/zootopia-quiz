@@ -131,20 +131,6 @@ header {
     top: 0;
 }
 
-ruby {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    vertical-align: middle;
-    align-items: center;
-}
-
-rt {
-    display: block;
-    font-size: 0.5em;
-    line-height: 1;
-    margin-bottom: 2px;
-}
-
 .choice-btn:active {
     top: 4px;
     box-shadow: 0 0 0 #d97706;
