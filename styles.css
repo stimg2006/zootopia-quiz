@@ -291,9 +291,10 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 100;
+    z-index: 1;
+    /* テキストの後ろに配置 */
     pointer-events: none;
-    animation: hanamaru-appear 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: hanamaru-appear 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes hanamaru-appear {
@@ -302,10 +303,17 @@ header {
         opacity: 0;
     }
 
-    100% {
-        transform: translate(-50%, -50%) scale(1.5) rotate(0);
-        opacity: 1;
+    40% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(0);
+        opacity: 0.5;
     }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0);
+        opacity: 0.15;
+    }
+
+    /* 薄く背景に残す */
 }
 
 #fireworks-container {
