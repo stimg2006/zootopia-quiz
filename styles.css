@@ -116,12 +116,27 @@ header {
     border: none;
     border-radius: 15px;
     background: #fbbf24;
-    color: white;
+    border: 3px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    line-height: 1.2;
     box-shadow: 0 4px 0 #d97706;
     position: relative;
     top: 0;
+}
+
+ruby {
+    ruby-align: center;
+}
+
+rt {
+    font-size: 0.6em;
+    line-height: 1;
+    vertical-align: -0.1em;
 }
 
 .choice-btn:active {

@@ -391,14 +391,14 @@ function showQuestion() {
 
     // Update buttons with shuffled choices
     currentChoices.forEach((choiceObj, index) => {
-        choicesBtns[index].innerText = choiceObj.text;
+        choicesBtns[index].innerHTML = choiceObj.text;
         choicesBtns[index].classList.remove("correct-highlight", "wrong-highlight");
     });
 }
 
 function updateScore() {
-    if (scoreDisplay) scoreDisplay.innerText = score;
-    if (wrongScoreDisplay) wrongScoreDisplay.innerText = wrongScore;
+    scoreDisplay.innerHTML = `<ruby>正解<rt>せいかい</rt></ruby>: ${score}`;
+    wrongScoreDisplay.innerHTML = `<ruby>間<rt>ま</rt></ruby>ちがい: ${wrongScore}`;
 }
 
 function checkAnswer(index) {
@@ -446,14 +446,19 @@ function showResult() {
     finalScoreText.innerText = finalScoreLabel;
 
     if (score === shuffledQuiz.length) {
-        // Perfect score celebration
-        document.getElementById("hanamaru-container").classList.remove("hidden");
-        triggerFireworks();
-        document.getElementById("result-message").innerHTML = "すごーい！まんてんだ！💮";
+        resultMessage.innerHTML = `すごい！ <ruby>全問正解<rt>ぜんもんせいかい</rt></ruby>！<br>きみは ズートピア・マスターだ！`;
+        hanamaruContainer.classList.remove("hidden");
+        if (typeof confetti !== 'undefined') {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    } else if (score >= 7) {
+        resultMessage.innerHTML = `よく がんばったね！<br>あと <ruby>少<rt>すこ</rt></ruby>しで <ruby>満点<rt>まんてん</rt></ruby>だ！`;
     } else {
-        document.getElementById("hanamaru-container").classList.add("hidden");
-        const message = score >= 7 ? "やったね！<br>ズートピア 博士だ！" : "また あそんでね！";
-        document.getElementById("result-message").innerHTML = message;
+        resultMessage.innerHTML = `おつかれさま！<br>もう <ruby>一回<rt>いっかい</rt></ruby> <ruby>挑戦<rt>ちょうせん</rt></ruby>してみよう！`;
     }
 
     saveAndShowHistory();
@@ -476,7 +481,7 @@ function saveAndShowHistory() {
     historyList.innerHTML = scores.map(item => `
         <li>
             <span>${item.date}</span>
-            <span>${item.total}もん ちゅう ${item.score}てん</span>
+            <span>${item.total}<ruby>問<rt>もん</rt></ruby> <ruby>中<rt>ちゅう</rt></ruby> ${item.score}<ruby>点<rt>てん</rt></ruby></span>
         </li>
     `).join('');
 }
