@@ -39,13 +39,13 @@ const quizData = [
         question: "ジュディの おかあさんの なまえは？",
         choices: ["ボニー", "ベルウェザー", "プリシラ", "フルー・フルー"],
         correct: 0,
-        image: "pics/ボニー・ホップス.png"
+        image: "pics/スチュー・ホップス.png"
     },
     {
-        question: "ジュディの おとうさんの なまえは？",
+        question: "ジュディ의 おとうさんの なまえは？",
         choices: ["スチュー", "ニック", "ボゴ", "フラッシュ"],
         correct: 0,
-        image: "pics/スチュー・ホップス.png"
+        image: "pics/ボニー・ホップス.png"
     },
     {
         question: "「だんなさんが いなくなったの」と そうだんにきた カワウソさんは？",
@@ -210,6 +210,7 @@ function showQuestion() {
 
     currentChoices.forEach((choiceObj, index) => {
         choicesBtns[index].innerText = choiceObj.text;
+        choicesBtns[index].classList.remove("correct-highlight", "wrong-highlight");
     });
 
     remainingDisplay.innerText = shuffledQuiz.length - currentQuestion;
@@ -222,22 +223,29 @@ function updateScore() {
 function checkAnswer(index) {
     const isCorrect = currentChoices[index].isCorrect;
 
-    showFeedback(isCorrect);
-
     if (isCorrect) {
         score++;
         updateScore();
+        choicesBtns[index].classList.add("correct-highlight");
+    } else {
+        choicesBtns[index].classList.add("wrong-highlight");
+        // Highlight the correct one
+        const correctIndex = currentChoices.findIndex(c => c.isCorrect);
+        choicesBtns[correctIndex].classList.add("correct-highlight");
     }
+
+    showFeedback(isCorrect);
 
     currentQuestion++;
 
+    // Wait longer as requested (2500ms)
     setTimeout(() => {
         if (currentQuestion < shuffledQuiz.length) {
             showQuestion();
         } else {
             showResult();
         }
-    }, 1000);
+    }, 2500);
 }
 
 function showFeedback(isCorrect) {
